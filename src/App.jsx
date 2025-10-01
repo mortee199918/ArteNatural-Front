@@ -1,10 +1,11 @@
-import Register from './pages/Registro'
+import Router from "./app/Router"
 
 const App = () => {
 
+
   return (
     <>
-      <Register></Register>
+      <Router />
     </>
   )
 }
