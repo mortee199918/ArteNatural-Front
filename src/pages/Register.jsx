@@ -7,7 +7,7 @@ const [username,setUsername] = useState('');
 const [password,setPassword] = useState('');
 const [email,setEmail] = useState('');
 const [age, setAge] = useState('');
-
+const [verificPassword,setVerificPassword] = useState('');
 
   return (
     <form className='form'>
