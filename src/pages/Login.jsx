@@ -8,7 +8,7 @@ import useToken from "../hooks/useToken"
 const Login = () => {
     const [username,setUsername] = useState('');
     const [password,setPassword] = useState('');
-    const {token, addToken} = useToken();
+    const {addToken} = useToken();
     const navigate = useNavigate();
     return (
        <>

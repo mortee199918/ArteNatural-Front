@@ -5,7 +5,7 @@ localStorage.setItem("token", token);
 
 }
 
-export const getToken = () =>{
+export const retrieveToken = () =>{
     return localStorage.getItem("token");
 
 }

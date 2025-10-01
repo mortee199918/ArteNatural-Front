@@ -1,4 +1,5 @@
 import api from './api.js';
+import { retrieveToken, removeToken } from '../providers/TokenManager.js';
 
 
 
@@ -24,12 +25,12 @@ export const login = async (username, password) => {
 
 
 export const setAuth = () => {  
-    api.defaults.headers.common.Authorization = `Bearer ${getToken()}`;
+    api.defaults.headers.common.Authorization = `Bearer ${retrieveToken()}`;
 };
 
 
 export const test = () => {
-	api.get("/users");
+	api.get("/Artistas");
 }
 
 export const register = async (username,password) =>{
@@ -40,11 +41,9 @@ export const register = async (username,password) =>{
 }
 export const unsetToken = () => {
     api.defaults.headers.common.Authorization = null;
-    removeToken();
 };
 export const validateToken = async () => {
    
     const res = await api.get("/auth/validate");
-    
-    return res.data;
+    return res.status === 200;
 };

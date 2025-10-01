@@ -1,18 +1,13 @@
-import { useState } from "react";
-import { getToken, removeToken, saveToken } from "../proveider/TokenProvider";
+import { useContext } from "react";
+import { TokenContext } from "../providers/TokenProvider";
+
 
 const useToken = () => {
-    const [token, setToken] = useState(getToken());
-    const deleteToken = () => {
-        removeToken();
-        setToken(null); 
-    };
-    const addToken = (token) => {
-        saveToken(token);
-        setToken(token);
-    };
-
-    return { token, addToken, deleteToken };
-}
+    const context = useContext(TokenContext);
+    if (context === null) {
+        throw new Error('useToken must be used within a TokenProvider');
+    }
+    return context;
+};
 
 export default useToken;
