@@ -43,7 +43,7 @@ const [verificPassword,setVerificPassword] = useState('');
       <div>
         <label>
           Confirmar contraseña:
-          <input type="password" className='input' name="confirmPassword" value={password} onChange={(e)=>{setPassword(e.target.value)}} required/>
+          <input type="password" className='input' name="confirmPassword" value={verificPassword} onChange={(e)=>{setVerificPassword(e.target.value)}} required/>
         </label>
       </div>
 
