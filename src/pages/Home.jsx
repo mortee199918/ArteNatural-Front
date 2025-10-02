@@ -1,8 +1,9 @@
+// src/components/Home.jsx
 import React, { useState, useEffect } from 'react';
-import '../Styled/Home.css'; // Importamos el CSS personalizado
-import useAuth from "../hooks/useAuth";
+import { Link } from 'react-router-dom'; // ← Para navegación
+import '../Styled/Home.css';
 
-// Datos de ejemplo (en tu app real vendrían de una API o contexto)
+// Datos de ejemplo (más adelante vendrán de la API)
 const mockArtworks = [
   {
     id: 1,
@@ -20,27 +21,14 @@ const mockArtworks = [
     imageUrl: "https://content.arquitecturaydiseno.es/medio/2023/05/31/creacion-de-adan-en-la-capilla-sixtina-miguel-angel-buonarroti-1508-1512_5a516deb_230531142003_2000x1141.jpg",
     price: 80,
   },
-  // Agrega más obras si quieres
 ];
 
 const Home = () => {
-  const { userRole } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // Simulación de autenticación (reemplaza con tu lógica real)
+  const userRole = localStorage.getItem('userRole');
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const handleBuy = (artwork) => {
-    alert(`Comprando: ${artwork.title} por $${artwork.price}`);
-    // Aquí iría tu lógica de compra (API, carrito, etc.)
-  };
-
-  const handleMessage = (artistName) => {
-    alert(`Enviando mensaje a ${artistName} para un encargo personalizado.`);
-    // Aquí iría tu lógica de mensajes (WebSocket, API, etc.)
   };
 
   return (
@@ -71,7 +59,11 @@ const Home = () => {
         <div className="artworks-grid">
           {mockArtworks.map((artwork) => (
             <div key={artwork.id} className="artwork-card">
-              <img src={artwork.imageUrl} alt={artwork.title} className="artwork-image" />
+              <img
+                src={artwork.imageUrl.trim()}
+                alt={artwork.title}
+                className="artwork-image"
+              />
               <div className="card-body">
                 <h3 className="artwork-title">{artwork.title}</h3>
                 <p className="artist-name">por {artwork.artistName}</p>
@@ -79,18 +71,10 @@ const Home = () => {
                 <div className="card-footer">
                   <span className="price">${artwork.price}</span>
                   <div className="card-buttons">
-                    <button
-                      className="btn-buy"
-                      onClick={() => handleBuy(artwork)}
-                    >
-                      Comprar
-                    </button>
-                    <button
-                      className="btn-message"
-                      onClick={() => handleMessage(artwork.artistName)}
-                    >
-                      Mensaje
-                    </button>
+                    {/* Botón "Ver detalles" */}
+                    <Link to={`/artwork/${artwork.id}`} className="btn-buy">
+                      Ver detalles
+                    </Link>
                   </div>
                 </div>
               </div>
