@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import  { useState } from 'react';
 import '../Styled/Home.css'; // Importamos el CSS personalizado
-import useAuth from '../hooks/useAuth';
+import useAuth from '../hooks/useToken';
 
 // Datos de ejemplo (en tu app real vendrían de una API o contexto)
 const mockArtworks = [

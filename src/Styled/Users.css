@@ -1,0 +1,98 @@
+.Title{
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    border-radius: 30px;
+    width: fit-content;
+    text-align: center;
+    margin: 80px auto 2rem auto;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px #000000;
+    padding: 0.5rem 1.5rem;
+
+}
+.container-imagen{
+    margin: auto;
+    height: 450px;
+    width: 450px;
+    text-align: center;
+    border-radius: 30px 30px 30px 30px;
+    margin-top: 60px;
+
+}
+.contorno-div{
+    margin: auto;
+    background-color:white;
+    width: 650px;
+    height: 580px;
+    border-radius: 30px 30px 30px 30px;
+    text-align: center;
+    margin-top: 60px;
+}
+.contorno-imagen{
+    margin: auto;
+    background-color:#FAD9FA;
+    width: 650px;
+    height: 580px;
+    border-radius: 30px 30px 30px 30px;
+    text-align: center;
+    margin-top: 60px;
+   
+}
+
+/* El NavBar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--primary-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-brand {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px #000;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000;
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-color);
+  margin: 3px 0;
+}
+
+
+
+
+
