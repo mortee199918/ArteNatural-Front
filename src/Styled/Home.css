@@ -1,0 +1,219 @@
+/* src/Styled/Home.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-bg: #6DAFB3;
+  /* Fondo de títulos y contenedores */
+  --text-color: #FAD9FA;
+  /* Color del texto principal */
+  --button-bg: black;
+  /* Fondo de botones */
+  --button-text: white;
+  /* Texto de botones */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0;
+  color: var(--text-color);
+}
+
+/* === Navbar === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--primary-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-brand {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px #000;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000;
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-color);
+  margin: 3px 0;
+}
+
+/* === Contenido principal === */
+.main-content {
+  padding: 2rem;
+}
+
+.page-title {
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  border-radius: 30px;
+  width: fit-content;
+  text-align: center;
+  margin: 80px auto 2rem auto;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px #000000;
+  padding: 0.5rem 1.5rem;
+}
+
+/* === Grid de obras === */
+.artworks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.artwork-card {
+  background-color: var(--primary-bg);
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s;
+}
+
+.artwork-card:hover {
+  transform: translateY(-6px);
+}
+
+.artwork-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 1.2rem;
+}
+
+.artwork-title {
+  font-size: 1.3em;
+  margin-bottom: 0.4rem;
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px #000;
+}
+
+.artist-name {
+  color: var(--text-color);
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000;
+  margin-bottom: 0.6rem;
+  font-size: 1em;
+}
+
+.artwork-description {
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px #000;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  font-size: 0.95em;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--text-color);
+  text-shadow: 1px 1px 2px #000;
+  font-size: 1.2em;
+}
+
+.card-buttons {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.btn-buy,
+.btn-message {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  transition: opacity 0.3s;
+}
+
+.btn-buy:hover,
+.btn-message:hover {
+  opacity: 0.9;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: var(--primary-bg);
+    flex-direction: column;
+    align-items: center;
+    padding: 1.2rem;
+    gap: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .artworks-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .page-title {
+    font-size: 2em;
+    width: 90%;
+  }
+}
