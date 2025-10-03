@@ -1,0 +1,45 @@
+.Title{
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    border-radius: 30px;
+    width: fit-content;
+    text-align: center;
+    margin: 80px auto 2rem auto;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px #000000;
+    padding: 0.5rem 1.5rem;
+
+}
+.container-imagen{
+    margin: auto;
+    height: 450px;
+    width: 450px;
+    text-align: center;
+    border-radius: 30px 30px 30px 30px;
+    margin-top: 60px;
+
+}
+.contorno-div{
+    margin: auto;
+    background-color:white;
+    width: 650px;
+    height: 580px;
+    border-radius: 30px 30px 30px 30px;
+    text-align: center;
+    margin-top: 60px;
+}
+.contorno-imagen{
+    margin: auto;
+    background-color:#FAD9FA;
+    width: 650px;
+    height: 580px;
+    border-radius: 30px 30px 30px 30px;
+    text-align: center;
+    margin-top: 60px;
+   
+   
+}
+
+
+
+

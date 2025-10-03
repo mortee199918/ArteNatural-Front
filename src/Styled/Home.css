@@ -57,6 +57,7 @@ body {
   padding: 0.4rem 0.8rem;
   border-radius: 30px;
   transition: background 0.3s;
+  cursor: pointer;
 }
 
 .nav-links a:hover {
