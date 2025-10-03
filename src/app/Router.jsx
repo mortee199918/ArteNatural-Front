@@ -14,9 +14,9 @@ const Router = ({auth}) => {
              <Route path="/Artistas" element={auth ? <Artistas/> : <Navigate to="/"/>} />
              {/* <Route path="" element={auth ? <Layout /> : <Login/>}> */}
 
-             {/* <Route path="/Home" element={auth ? <Home/> : <Navigate to="/"/>} /> */}
+             <Route path="/Home" element={auth ? <Home/> : <Navigate to="/"/>} />
 
-             <Route path="/home" element={<Home/>} />
+             {/* <Route path="/home" element={<Home/>} /> */}
              <Route path="/users" element={<Users/>} />
              {/* </Route> */}
             <Route path="*" element={<div>404</div>} />

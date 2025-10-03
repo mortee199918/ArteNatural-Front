@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../Styled/Login.css"
 import { useNavigate } from "react-router-dom";
 import { login } from "../services/auth";
@@ -8,8 +8,13 @@ import useToken from "../hooks/useToken"
 const Login = () => {
     const [username,setUsername] = useState('');
     const [password,setPassword] = useState('');
-    const {addToken} = useToken();
+    const {addToken,token} = useToken();
     const navigate = useNavigate();
+    useEffect(()=>{
+      if(token)
+         navigate("/Home")
+
+    },[token]);
     return (
        <>
          <h1>Login</h1>
@@ -21,7 +26,7 @@ const Login = () => {
                
                login(username, password)
                .then(addToken)
-               .then(()=>navigate("/Artistas"));
+            
 
                }}>Login</button>
             <button onClick={()=>{

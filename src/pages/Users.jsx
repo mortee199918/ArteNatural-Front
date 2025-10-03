@@ -4,7 +4,7 @@ import useAuth from '../hooks/useToken';
 import foto1 from '../Styled/FotospruebaUsers/foto1.webp';
 import foto2 from '../Styled/FotospruebaUsers/foto2.webp';
 import foto3 from '../Styled/FotospruebaUsers/foto3.jpg';
-import fota4 from '../Syled/FotospruebaUsers/foto4.jpg';
+import foto4 from '../Styled/FotospruebaUsers/foto4.jpg';
 import { Link } from 'react-router-dom';
 
 
@@ -47,9 +47,9 @@ const Users = () => {
             <h1 className='Title'>ArtisticWall</h1>
             <div className='contorno-div'>
                 <p className='contorno-imagen'><Link to={'/Artistas'}><img src={foto1} className='container-imagen' /></Link></p>
-                 <p className='contorno-imagen'><Link to={'/Artistas'}><img src={foto2} className='container-imagen' /></Link></p>
-                 <p  className='contorno-imagen'><Link to={'/Artistas'}><img src={foto3} className='container-imagen' /></Link></p>
-                  <p> className='contorno-imagen'><Link to={'/Artistas'}><img src={foto4} className='container-imagen' /></Link></p>
+                <p className='contorno-imagen'><Link to={'/Artistas'}><img src={foto2} className='container-imagen' /></Link></p>
+                <p  className='contorno-imagen'><Link to={'/Artistas'}><img src={foto3} className='container-imagen' /></Link></p>
+                <p className='contorno-imagen'><Link to={'/Artistas'}><img src={foto4} className='container-imagen' /></Link></p>
             </div>
 
         </>
