@@ -8,17 +8,13 @@ import Users from '../pages/Users'
 const Router = ({auth}) => {
     return <BrowserRouter>
         <Routes>
-            <Route index element={<Login/>} />
+            <Route path="/Login" element={<Login/>} />
             <Route path="/Register" element={<Register/>} />
-             
-             <Route path="/Artistas" element={auth ? <Artistas/> : <Navigate to="/"/>} />
-             {/* <Route path="" element={auth ? <Layout /> : <Login/>}> */}
-
-             <Route path="/Home" element={auth ? <Home/> : <Navigate to="/"/>} />
-
-             {/* <Route path="/home" element={<Home/>} /> */}
-             <Route path="/users" element={<Users/>} />
-             {/* </Route> */}
+            <Route path="" element={ <Layout />}> 
+                <Route index element={<Home/>} />
+                <Route path="/Artistas" element={auth ? <Artistas/> : <Login/>} />
+                <Route path="/users" element={ <Users/>} />
+             </Route>
             <Route path="*" element={<div>404</div>} />
         </Routes>
         
