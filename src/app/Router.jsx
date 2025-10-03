@@ -5,6 +5,7 @@ import Register from '../pages/Register';
 import Artistas from '../pages/Artistas';
 import Home from '../pages/Home'
 import Users from '../pages/Users'
+import ArtworkDetail from '../pages/ArtworkDetail'
 const Router = ({auth}) => {
     return <BrowserRouter>
         <Routes>
