@@ -1,67 +1,67 @@
-import  { useState } from 'react';
-import "../Styled/Register.css"
+import { useState } from 'react';
+import { Form, Registers, Input, Container, Label, Boton, Select, Option } from '../Styled/RegisterStyled';
 import { register } from '../services/auth';
 
 const Register = () => {
-const [username,setUsername] = useState('');
-const [password,setPassword] = useState('');
-const [email,setEmail] = useState('');
-const [age, setAge] = useState('');
-const [verificPassword,setVerificPassword] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [age, setAge] = useState('');
+  const [verificPassword, setVerificPassword] = useState('');
 
   return (
-    <form className='form'>
-      <h2 className='Register'>Registrarse</h2>
-    <div className='container'>
-      <div>
-        <label>
-          Usuario: 
-          <input type="text" className='input' name="name" value={username} onChange={(e)=>{setUsername(e.target.value)}} required/> <br/>
-        </label>
-      </div>
+    <Form>
+      <Registers>Registrarse</Registers>
+      <Container>
+        <div>
+          <Label>
+            Usuario:
+            <Input type="text" className='Input' name="name" value={username} onChange={(e) => { setUsername(e.target.value) }} required /> <br />
+          </Label>
+        </div>
 
-      <div>
-        <label>
-          Email:
-          <input type="email" className='input' name="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} required/>
-        </label>
-      </div>
-      <div>
-        <label>
-          Edad: 
-          <input type="date" className='input' name="number" value={age} onChange={(e)=>{setAge(e.target.value)}} required/> <br/>
-        </label>
-      </div>
+        <div>
+          <Label>
+            Email:
+            <Input type="email" className='Input' name="email" value={email} onChange={(e) => { setEmail(e.target.value) }} required />
+          </Label>
+        </div>
+        <div>
+          <Label>
+            Edad:
+            <Input type="date" className='Input' name="number" value={age} onChange={(e) => { setAge(e.target.value) }} required /> <br />
+          </Label>
+        </div>
 
-      <div>
-        <label>
-          Contraseña:
-          <input type="password"name="password" className='input' value={password} onChange={(e)=>{setPassword(e.target.value)}}  required/>
-        </label>
-      </div>
+        <div>
+          <Label>
+            Contraseña:
+            <Input type="password" name="password" className='Input' value={password} onChange={(e) => { setPassword(e.target.value) }} required />
+          </Label>
+        </div>
 
-      <div>
-        <label>
-          Confirmar contraseña:
-          <input type="password" className='input' name="confirmPassword" value={verificPassword} onChange={(e)=>{setVerificPassword(e.target.value)}} required/>
-        </label>
-      </div>
+        <div>
+          <Label>
+            Confirmar contraseña:
+            <Input type="password" className='Input' name="confirmPassword" value={verificPassword} onChange={(e) => { setVerificPassword(e.target.value) }} required />
+          </Label>
+        </div>
 
-      <div>
-        <label>
-          Registrarse como:
-          <select name="role" className='input' >
-            <option value="cliente">Cliente </option>
-            <option value="artista">Artista </option>
-          </select>
-        </label>
-      </div>
+        <div>
+          <Label>
+            Registrarse como: 
+            <Select name="role" className='Input' >
+              <Option value="cliente">Cliente </Option>
+              <Option value="artista">Artista </Option>
+            </Select>
+          </Label>
+        </div>
 
-      <button type="submit" onClick={()=>{
-        register(username,password)
-      }}>Registrarse</button>
-      </div>
-    </form>
+        <Boton type="submit" onClick={() => {
+          register(username, password)
+        }}>Registrarse</Boton>
+      </Container>
+    </Form>
   );
 };
 

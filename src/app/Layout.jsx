@@ -39,7 +39,7 @@ const Layout = () => {
                         )}
                         <li><a href="/Users">Galería</a></li>
                         {userRole === 'artist' && <li><a href="/my-works">Mis obras</a></li>}
-                        <li><a href="/profile">Perfil</a></li>
+                        <li><a href="/Perfil">Perfil</a></li>
                         <li>{token ? <a onClick={(e) => { e.preventDefault(); deleteToken(); alert("sesion cerrada con exito") }}
                         >Cerrar sesión</a> : <Link to={"/Login"}>Iniciar sesion</Link>}</li>
 

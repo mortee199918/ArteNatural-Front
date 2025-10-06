@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../Styled/Login.css"
+import { Title, Container, ContainerInput,  Texto, Boton, Input } from "../Styled/LoginStyled";
 import { useNavigate } from "react-router-dom";
 import { login } from "../services/auth";
 import useToken from "../hooks/useToken"
@@ -16,22 +16,22 @@ const Login = () => {
     },[token]);
     return (
        <>
-         <h1>Login</h1>
-         <div className="container"><br />
-            <p> Nombre de Usuario: <input type="text" value={username} className='input' placeholder="username" onChange={(e) => setUsername(e.target.value)} /></p>
-            <p> Contraseña: <input type="password" value={password} className='input' placeholder="password" onChange={(e) => setPassword(e.target.value)} /></p>
-            <button onClick={() => {
+         <Title>Login</Title>
+         <Container>
+            <Texto> Nombre de Usuario: <Input type="text" value={username} className='ConatinerInput' placeholder="username" onChange={(e) => setUsername(e.target.value)} /></Texto>
+            <Texto> Contraseña: <Input type="password" value={password} className='ContainerInput' placeholder="password" onChange={(e) => setPassword(e.target.value)} /></Texto>
+            <Boton onClick={() => {
                console.log(username, password);
 
                login(username, password)
                .then(addToken)
             
 
-            }}>Login</button>
-            <button onClick={() => {
+            }}>Login</Boton>
+            <Boton onClick={() => {
                navigate("/Register");
-            }}>Register</button>
-         </div>
+            }}>Register</Boton>
+         </Container>
 
       </>
 
