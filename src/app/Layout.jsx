@@ -37,6 +37,7 @@ const Layout = () => {
                         {userRole === "artist" && (
                             <li><Link to="/upload-work">Subir Obra</Link></li>
                         )}
+                        <li><Link to="/open-gallery">Galería Artistas</Link></li>
                         <li><Link to="/Gallery">Galería</Link></li>
                         {userRole === 'artist' && <li><a href="/my-works">Mis obras</a></li>}
                         <li><Link to="/Perfil">Perfil</Link></li>
