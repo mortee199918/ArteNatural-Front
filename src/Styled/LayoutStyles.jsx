@@ -18,6 +18,10 @@ export const Brand = styled.div `
   font-weight: bold;
   color: var(--text-color);
   text-shadow: 1px 1px 2px #000;
+  img {
+    width: 300px;
+    aspect-ratio:5;
+  }
 `
 export const Linked = styled.ul `
   display: flex;

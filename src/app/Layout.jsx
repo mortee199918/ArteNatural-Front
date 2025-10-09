@@ -26,7 +26,7 @@ const Layout = () => {
 
                 {/* Barra de navegación */}
                 <Navbar>
-                    <Brand>ArteNatural</Brand>
+                    <Brand><img src="assets/logoArte.png"/></Brand>
                     <Hamburguesa onClick={toggleMenu}>
                         <span></span>
                         <span></span>
