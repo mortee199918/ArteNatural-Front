@@ -1,10 +1,20 @@
 import api from "./api";
 
-export const uploadImageToBack = async (file) =>{
-    console.log(typeof(file))
+export const uploadImageToBack = async (file) => {
+    console.log(typeof (file))
     const formData = new FormData();
     formData.append('file', file);
-    const res =  await api.post("/uploads/upload", formData, {headers:{'Content-Type': 'multipart/form-data'}})
+    const res = await api.post("/uploads/upload", formData, { headers: { 'Content-Type': 'multipart/form-data' } })
     alert('Imagen correctamente subida')
-    return res.data 
+    return res.data
 }
+
+export const getUserImages = async () => {
+    const res = await api.get("/uploads/list"); // ya incluye el token por defecto en api
+    return res.data;
+};
+
+export const getAllImages = async () => {
+    const res = await api.get("/uploads/all");
+    return res.data;
+};

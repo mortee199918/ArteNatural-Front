@@ -1,35 +1,34 @@
-
-import { Link } from 'react-router-dom';
-import {Title, ContainerDiv, Imagen} from '../Styled/GalleryStyles';
-import foto1 from '../Styled/FotospruebaUsers/foto1.webp';
-import foto2 from '../Styled/FotospruebaUsers/foto2.webp';
-import foto3 from '../Styled/FotospruebaUsers/foto3.jpg';
-import foto4 from '../Styled/FotospruebaUsers/foto4.jpg';
-
-
-
-
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Title, ContainerDiv, Imagen } from "../Styled/GalleryStyles";
+import { getUserImages } from "../services/upload";
 
 const Gallery = () => {
+    const [images, setImages] = useState([]);
 
-
-
-
+    useEffect(() => {
+        getUserImages()
+            .then((data) => setImages(data))
+            .catch((err) => console.error("Error al cargar las imágenes:", err));
+    }, []);
 
     return (
         <>
-
-            <Title>ArtisticWall</Title>
+            <Title>Mi Galería</Title>
             <ContainerDiv>
-                <Link to={'/Artistas'}><Imagen src={foto1}  /></Link>
-                <Link to={'/Artistas'}><Imagen src={foto2}  /></Link>
-                <Link to={'/Artistas'}><Imagen src={foto3}  /></Link>
-                <Link to={'/Artistas'}><Imagen src={foto4}  /></Link>
+                {images.length > 0 ? (
+                    images.map((imgUrl, index) => (
+                        <Link key={index} to={"/Artistas"}>
+                            <Imagen
+                                src={`http://localhost:8082${imgUrl}`}
+                                alt={`imagen-${index}`}
+                            />
+                        </Link>
+                    ))
+                ) : (
+                    <p>No has subido imágenes todavía.</p>
+                )}
             </ContainerDiv>
-
-
-
-
         </>
     );
 };
