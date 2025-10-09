@@ -42,7 +42,6 @@ export const Boton = styled.button`
     color: black;
     border-radius: 30px 30px 30px 30px;
     margin-top: 20px;
-    cursor: pointer;
 
 `
 export const Input = styled.input`
@@ -57,4 +56,3 @@ export const ContainerInput = styled.input `
   box-sizing: border-box;
 
 `
-
