@@ -8,6 +8,7 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [age, setAge] = useState('');
   const [verificPassword, setVerificPassword] = useState('');
+  const [role, setRole] = useState('');
 
   return (
     <Form>
@@ -50,15 +51,15 @@ const Register = () => {
         <div>
           <Label>
             Registrarse como: 
-            <Select name="role" className='Input' >
-              <Option value="cliente">Cliente </Option>
-              <Option value="artista">Artista </Option>
+            <Select name="role" className='Input' onChange={(e)=>{setRole(e.target.value)}} >
+              <Option value="CONSUMER">Cliente </Option>
+              <Option value="ARTIST">Artista </Option>
             </Select>
           </Label>
         </div>
 
         <Boton type="submit" onClick={() => {
-          register(username, password)
+          register(username, password, role)
         }}>Registrarse</Boton>
       </Container>
     </Form>
