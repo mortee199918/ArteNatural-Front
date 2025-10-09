@@ -43,7 +43,9 @@ export const unsetToken = () => {
     api.defaults.headers.common.Authorization = null;
 };
 export const validateToken = async () => {
+
    
     const res = await api.get("/auth/validate");
+    
     return res.status === 200;
 };

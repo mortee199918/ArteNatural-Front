@@ -33,13 +33,13 @@ const Layout = () => {
                         <span></span>
                     </div>
                     <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-                        <li><a href="/">Inicio</a></li>
+                        <li><Link to="/">Inicio</Link></li>
                         {userRole === "artist" && (
-                            <li><a href="/upload-work">Subir Obra</a></li>
+                            <li><Link to="/upload-work">Subir Obra</Link></li>
                         )}
-                        <li><a href="/Users">Galería</a></li>
+                        <li><Link to="/Gallery">Galería</Link></li>
                         {userRole === 'artist' && <li><a href="/my-works">Mis obras</a></li>}
-                        <li><a href="/Perfil">Perfil</a></li>
+                        <li><Link to="/Perfil">Perfil</Link></li>
                         <li>{token ? <a onClick={(e) => { e.preventDefault(); deleteToken(); alert("sesion cerrada con exito") }}
                         >Cerrar sesión</a> : <Link to={"/Login"}>Iniciar sesion</Link>}</li>
 

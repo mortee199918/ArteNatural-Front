@@ -2,21 +2,41 @@ import { BrowserRouter, Navigate, Route, Routes, useNavigate } from 'react-route
 import Login from '../pages/Login';
 import Layout from './Layout';
 import Register from '../pages/Register';
-import Artistas from '../pages/Artistas';
 import Home from '../pages/Home'
-import Users from '../pages/Users'
 import ArtworkDetail from '../pages/ArtworkDetail'
 import Perfil from '../pages/Perfil';
-const Router = ({ auth }) => {
+import Gallery from '../pages/Gallery';
+import useToken from '../hooks/useToken';
+import { validateToken, unsetToken, setAuth } from '../services/auth';
+import { useState, useEffect} from 'react';
+const Router = () => {
+    const [isAuthenticated, setAuthenticated] = useState()
+    const { token, deleteToken } = useToken();
+
+  useEffect(()=>{
+    if (token) {
+        
+        
+      setAuth();
+      validateToken().then((valid) =>{
+        if (!valid){
+          unsetToken()
+          deleteToken()
+        }
+        setAuthenticated(valid)
+        });
+    }}
+    , [token]);
+    
+    
     return <BrowserRouter>
         <Routes>
             <Route path="/Login" element={<Login />} />
             <Route path="/Register" element={<Register />} />
             <Route path="" element={<Layout />}>
                 <Route index element={<Home />} />
-                <Route path="/Artistas" element={auth ? <Artistas /> : <Login />} />
-                <Route path="/Perfil" element={ <Perfil />} />
-                <Route path="/users" element={<Users />} />
+                <Route path="/Perfil" element={ isAuthenticated ? <Perfil /> : <Login/>} />
+                <Route path="/Gallery" element={<Gallery />} />
                 <Route path="/artwork/:id" element={<ArtworkDetail />} />
 
             </Route>
