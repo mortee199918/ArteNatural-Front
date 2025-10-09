@@ -8,42 +8,45 @@ import Perfil from '../pages/Perfil';
 import Gallery from '../pages/Gallery';
 import useToken from '../hooks/useToken';
 import { validateToken, unsetToken, setAuth } from '../services/auth';
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
+import OpenGallery from '../pages/OpenGallery';
 const Router = () => {
-    const [isAuthenticated, setAuthenticated] = useState()
-    const { token, deleteToken } = useToken();
+  const [isAuthenticated, setAuthenticated] = useState()
+  const { token, deleteToken } = useToken();
 
-  useEffect(()=>{
+  useEffect(() => {
     if (token) {
-        
-        
+
+
       setAuth();
-      validateToken().then((valid) =>{
-        if (!valid){
+      validateToken().then((valid) => {
+        if (!valid) {
           unsetToken()
           deleteToken()
         }
         setAuthenticated(valid)
-        });
-    }}
+      });
+    }
+  }
     , [token]);
-    
-    
-    return <BrowserRouter>
-        <Routes>
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Register" element={<Register />} />
-            <Route path="" element={<Layout />}>
-                <Route index element={<Home />} />
-                <Route path="/Perfil" element={ isAuthenticated ? <Perfil /> : <Login/>} />
-                <Route path="/Gallery" element={<Gallery />} />
-                <Route path="/artwork/:id" element={<ArtworkDetail />} />
 
-            </Route>
-            <Route path="*" element={<div>404</div>} />
-        </Routes>
 
-    </BrowserRouter>
+  return <BrowserRouter>
+    <Routes>
+      <Route path="/Login" element={<Login />} />
+      <Route path="/Register" element={<Register />} />
+      <Route path="" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="/Perfil" element={isAuthenticated ? <Perfil /> : <Login />} />
+        <Route path="/open-gallery" element={<OpenGallery />} />
+        <Route path="/Gallery" element={<Gallery />} />
+        <Route path="/artwork/:id" element={<ArtworkDetail />} />
+
+      </Route>
+      <Route path="*" element={<div>404</div>} />
+    </Routes>
+
+  </BrowserRouter>
 };
 
 export default Router;

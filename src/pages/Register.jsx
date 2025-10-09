@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Form, Registers, Input, Container, Label, Boton, Select, Option } from '../Styled/RegisterStyled';
 import { register } from '../services/auth';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -9,6 +10,7 @@ const Register = () => {
   const [age, setAge] = useState('');
   const [verificPassword, setVerificPassword] = useState('');
   const [role, setRole] = useState('');
+  const navigate = useNavigate();
 
   return (
     <Form>
@@ -50,8 +52,8 @@ const Register = () => {
 
         <div>
           <Label>
-            Registrarse como: 
-            <Select name="role" className='Input' onChange={(e)=>{setRole(e.target.value)}} >
+            Registrarse como:
+            <Select name="role" className='Input' onChange={(e) => { setRole(e.target.value) }} >
               <Option value="CONSUMER">Cliente </Option>
               <Option value="ARTIST">Artista </Option>
             </Select>
@@ -59,7 +61,8 @@ const Register = () => {
         </div>
 
         <Boton type="submit" onClick={() => {
-          register(username, password, role)
+          register(username, password, role),
+            navigate("/Login");
         }}>Registrarse</Boton>
       </Container>
     </Form>
