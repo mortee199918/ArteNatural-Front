@@ -1,7 +1,7 @@
 import  { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'; // ← Para navegación
+import { Link } from 'react-router-dom';
+import '../Styled/Home.css';
 
-import '../Styled/Home.css'; // Importamos el CSS personalizado
 
 
 // Datos de ejemplo (más adelante vendrán de la API)
@@ -28,9 +28,6 @@ const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
 
   return (
     <div className="home-container">

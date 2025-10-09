@@ -2,13 +2,13 @@ import { Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import useToken from '../hooks/useToken';
 import { Link } from 'react-router-dom';
+import { Navbar, Brand,  Hamburguesa, Linked } from '../Styled/LayoutStyles';
 
 
 
 
 const Layout = () => {
 
-    const [userRole, setUserRole] = useState();
     const { deleteToken, token } = useToken();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const toggleMenu = () => {
@@ -25,27 +25,23 @@ const Layout = () => {
             <div>
 
                 {/* Barra de navegación */}
-                <nav className="navbar">
-                    <div className="nav-brand">ArteNatural</div>
-                    <div className="hamburger" onClick={toggleMenu}>
+                <Navbar>
+                    <Brand>ArteNatural</Brand>
+                    <Hamburguesa onClick={toggleMenu}>
                         <span></span>
                         <span></span>
                         <span></span>
-                    </div>
-                    <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+                    </Hamburguesa>
+                    <Linked className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                         <li><Link to="/">Inicio</Link></li>
-                        {userRole === "artist" && (
-                            <li><Link to="/upload-work">Subir Obra</Link></li>
-                        )}
                         <li><Link to="/Gallery">Galería</Link></li>
-                        {userRole === 'artist' && <li><a href="/my-works">Mis obras</a></li>}
                         <li><Link to="/Perfil">Perfil</Link></li>
                         <li>{token ? <a onClick={(e) => { e.preventDefault(); deleteToken(); alert("sesion cerrada con exito") }}
                         >Cerrar sesión</a> : <Link to={"/Login"}>Iniciar sesion</Link>}</li>
 
 
-                    </ul>
-                </nav>
+                    </Linked>
+                </Navbar>
                 <Outlet></Outlet>
             </div>
         </>
