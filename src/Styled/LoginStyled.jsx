@@ -24,7 +24,7 @@ export const Texto = styled.p`
 export const Container = styled.div`
     margin: auto;
     height: fit-content;
-    width: 550px;
+    width: 250px;
     text-align: center;
     background-color: #6DAFB3;
     border-radius: 30px 30px 30px 30px;
@@ -42,7 +42,6 @@ export const Boton = styled.button`
     color: black;
     border-radius: 30px 30px 30px 30px;
     margin-top: 20px;
-    cursor: pointer;
 
 `
 export const Input = styled.input`
@@ -57,4 +56,3 @@ export const ContainerInput = styled.input `
   box-sizing: border-box;
 
 `
-
