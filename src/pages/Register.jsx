@@ -7,9 +7,9 @@ const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
-  const [age, setAge] = useState('');
-  const [verificPassword, setVerificPassword] = useState('');
-  const [role, setRole] = useState('');
+  const [birthdate, setBirthdate] = useState('');
+  const [verifiedPassword, setVerifiedPassword] = useState('');
+  const [role, setRole] = useState('CONSUMER');
   const navigate = useNavigate();
 
   return (
@@ -32,7 +32,7 @@ const Register = () => {
         <div>
           <Label>
             Edad:
-            <Input type="date" className='Input' name="number" value={age} onChange={(e) => { setAge(e.target.value) }} required /> <br />
+            <Input type="date" className='Input' name="number" value={birthdate} onChange={(e) => { setBirthdate(e.target.value) }} required /> <br />
           </Label>
         </div>
 
@@ -46,7 +46,7 @@ const Register = () => {
         <div>
           <Label>
             Confirmar contraseña:
-            <Input type="password" className='Input' name="confirmPassword" value={verificPassword} onChange={(e) => { setVerificPassword(e.target.value) }} required />
+            <Input type="password" className='Input' name="confirmPassword" value={verifiedPassword} onChange={(e) => { setVerifiedPassword(e.target.value) }} required />
           </Label>
         </div>
 
@@ -61,8 +61,13 @@ const Register = () => {
         </div>
 
         <Boton type="submit" onClick={() => {
-          register(username, password, role),
+          if (password === verifiedPassword){
+            register(username, password, role, birthdate, email),
             navigate("/Login");
+          }
+
+          else
+            alert("Las contraseñas no coinciden")
         }}>Registrarse</Boton>
       </Container>
     </Form>

@@ -3,7 +3,6 @@ import Login from '../pages/Login';
 import Layout from './Layout';
 import Register from '../pages/Register';
 import Home from '../pages/Home'
-import ArtworkDetail from '../pages/ArtworkDetail'
 import Perfil from '../pages/Perfil';
 import Gallery from '../pages/Gallery';
 import useToken from '../hooks/useToken';
@@ -40,7 +39,7 @@ const Router = () => {
         <Route path="/Perfil" element={isAuthenticated ? <Perfil /> : <Login />} />
         <Route path="/open-gallery" element={<OpenGallery />} />
         <Route path="/Gallery" element={<Gallery />} />
-        <Route path="/artwork/:id" element={<ArtworkDetail />} />
+        
 
       </Route>
       <Route path="*" element={<div>404</div>} />

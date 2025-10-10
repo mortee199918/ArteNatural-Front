@@ -6,3 +6,8 @@ export const getUserFromToken =async()=>{
     return res.data;
     
 }
+export const updatePerfil =  async(user) =>{
+    const res =  await api.put('/users', user)
+    return res.data
+
+}

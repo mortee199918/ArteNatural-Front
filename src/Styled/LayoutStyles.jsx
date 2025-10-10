@@ -1,5 +1,32 @@
 import styled from "@emotion/styled";
+import {css, Global} from "@emotion/react";
 
+export const GlobalStyles = () => (
+  <Global
+    styles={css`
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-bg: #6DAFB3;
+        --text-color: #FAD9FA;
+        --button-bg: black;
+        --button-text: white;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f0f0;
+        color: var(--text-color);
+      }
+    `}
+  />
+);
 
 export const Navbar = styled.nav`
   display: flex;

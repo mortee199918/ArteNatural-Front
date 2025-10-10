@@ -33,8 +33,8 @@ export const test = () => {
 	api.get("/Artistas");
 }
 
-export const register = async (username,password, role) =>{
- const  response = await api.post("/auth/register",{username,password,role})
+export const register = async (username,password, role, birthdate, mail) =>{
+ const  response = await api.post("/auth/register",{username,password,role,birthdate, mail})
    if (response.status === 200) {
     alert("Registro completo")
    }
