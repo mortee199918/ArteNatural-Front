@@ -1,6 +1,6 @@
-import  { useEffect, useState } from 'react';
+
 import { Link } from 'react-router-dom';
-import '../Styled/Home.css';
+import { Title, Main, ArtWorks, ArtCard, ArtImg, CardBody, ArtTitle, ArtName, Descripcion, CardFooter, Prince, CardBoton  } from '../Styled/HomeStyled';
 
 
 
@@ -25,42 +25,37 @@ const mockArtworks = [
 ];
 
 const Home = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  
 
 
   return (
     <div className="home-container">
     
       {/* Contenido principal */}
-      <main className="main-content">
-        <h1 className="page-title">Obras destacadas</h1>
-        <div className="artworks-grid">
+      <Main>
+        <Title>Obras destacadas</Title>
+        <ArtWorks>
           {mockArtworks.map((artwork) => (
-            <div key={artwork.id} className="artwork-card">
-              <img
-                src={artwork.imageUrl.trim()}
-                alt={artwork.title}
-                className="artwork-image"
-              />
-              <div className="card-body">
-                <h3 className="artwork-title">{artwork.title}</h3>
-                <p className="artist-name">por {artwork.artistName}</p>
-                <p className="artwork-description">{artwork.description}</p>
-                <div className="card-footer">
-                  <span className="price">${artwork.price}</span>
-                  <div className="card-buttons">
+            <ArtCard key={artwork.id} >
+              <ArtImg src={artwork.imageUrl.trim()}alt={artwork.title}/>
+              <CardBody>
+                <ArtTitle>{artwork.title}</ArtTitle>
+                <ArtName>por {artwork.artistName}</ArtName>
+                <Descripcion>{artwork.description}</Descripcion>
+                <CardFooter>
+                  <Prince>${artwork.price}</Prince>
+                  <CardBoton>
                     {/* Botón "Ver detalles" */}
                     <Link to={`/artwork/${artwork.id}`} className="btn-buy">
                       Ver detalles
                     </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
+                  </CardBoton>
+                </CardFooter>
+              </CardBody>
+            </ArtCard>
           ))}
-        </div>
-      </main>
+        </ArtWorks>
+      </Main>
     </div>
   );
 };
