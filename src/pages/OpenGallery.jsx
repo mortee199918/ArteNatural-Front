@@ -18,7 +18,7 @@ const OpenGallery = () => {
       <ContainerDiv>
         {images.length > 0 ? (
           images.map((imgUrl, index) => (
-            <Link key={index} to={"/Artistas"}>
+            <Link key={index} to={"/ArtistGallery"}>
               <Imagen
                 src={`http://localhost:8082${imgUrl}`}
                 alt={`imagen-${index}`}

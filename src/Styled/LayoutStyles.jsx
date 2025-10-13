@@ -13,7 +13,7 @@ export const GlobalStyles = () => (
       }
 
       :root {
-        --primary-bg: #6DAFB3;
+        --primary-bg: #4c7274;
         --text-color: #FAD9FA;
         --button-bg: black;
         --button-text: white;

@@ -33,7 +33,7 @@ const Perfil = () => {
                 }}> Editar </ElBoton>
             </Container>    
             
-            {(user?.roles[0].roleName === "ARTIST") && <Artistas/>}
+            {(user?.roles[0].roleName === "ARTIST") && <Artistas user={user}/>}
             
         </>
     );

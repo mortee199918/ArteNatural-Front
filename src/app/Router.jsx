@@ -9,6 +9,7 @@ import useToken from '../hooks/useToken';
 import { validateToken, unsetToken, setAuth } from '../services/auth';
 import { useState, useEffect } from 'react';
 import OpenGallery from '../pages/OpenGallery';
+import ArtworkDetail from '../pages/ArtworkDetail';
 const Router = () => {
   const [isAuthenticated, setAuthenticated] = useState()
   const { token, deleteToken } = useToken();
@@ -39,7 +40,7 @@ const Router = () => {
         <Route path="/Perfil" element={isAuthenticated ? <Perfil /> : <Login />} />
         <Route path="/open-gallery" element={<OpenGallery />} />
         <Route path="/Gallery" element={<Gallery />} />
-        
+        <Route path='/ArtistGallery' element={<ArtworkDetail/>} />
 
       </Route>
       <Route path="*" element={<div>404</div>} />

@@ -38,8 +38,10 @@ const Layout = () => {
                         <li><Link to="/">Inicio</Link></li>
                         {user?.roles[0].roleName === "ARTIST" && <li><Link to="/Gallery">Mi Galería</Link></li>}
                         <li><Link to="/Perfil">Perfil</Link></li>
+                        <li><Link to='/open-gallery'> Galería General</Link></li>
                         <li>{token ? <a onClick={(e) => { e.preventDefault(); deleteToken(); alert("sesion cerrada con exito") }}
                         >Cerrar sesión</a> : <Link to={"/Login"}>Iniciar sesion</Link>}</li>
+                        
                     </Linked>
                 </Navbar>
                 <Outlet></Outlet>

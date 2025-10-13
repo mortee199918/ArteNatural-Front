@@ -15,6 +15,6 @@ export const getUserImages = async () => {
 };
 
 export const getAllImages = async () => {
-    const res = await api.get("/uploads/all");
+    const res = await api.get("/uploads/list/all");
     return res.data;
 };

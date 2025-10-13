@@ -4,7 +4,7 @@ import { Title, Main, ArtWorks, ArtCard, ArtImg, CardBody, ArtTitle, ArtName, De
 
 
 
-// Datos de ejemplo (más adelante vendrán de la API)
+
 const mockArtworks = [
   {
     id: 1,
