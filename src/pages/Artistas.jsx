@@ -1,16 +1,19 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { uploadImageToBack } from "../services/upload";
 import { Conatiner, ElBoton, Titulo , Input } from "../Styled/ArtistasStyles";
 import { Select, Option } from "../Styled/RegisterStyled";
+import { uploadProduct } from "../services/product";
 
 const Artistas = ({user}) => {
     const [uploadImage,setUploadImage] = useState();
-    const [product, setProduct] = useState();
+    const [product, setProduct] = useState({options:[], image:user?.artistData.images[0]});
     const [category, setCategory] = useState();
-    
+    const categorySelect = useRef();
+    const [categoryList, setCategoryList] = useState([]);
+    const [option, setOption] = useState();
 
 
-    console.log(user?.artistData.images);
+    console.log(product);
     
 
     return (
@@ -29,26 +32,26 @@ const Artistas = ({user}) => {
                     
                     
                     <Input type="text" placeholder="Titulo" onChange={e => setProduct({...product, title: e.target.value})}/>
-                    <Input type="text" placeholder="Descripcíon" onChange={e => setProduct({...product, desciption: e.target.value})}/>
+                    <Input type="text" placeholder="Descripcíon" onChange={e => setProduct({...product, description: e.target.value})}/>
                     <Input type="number" placeholder="Precio base" onChange={e => setProduct({...product, price: e.target.value})}/>
                     <br/>
-                    <Select> 
+                    <Select onChange={e => setProduct({...product, image: e.target.value})}> 
                         {
                             user?.artistData.images.map(image => {
                                 const imageName = image.slice(image.lastIndexOf("/")+1)
-                                return <Option value="image" >{imageName}</Option>
+                                return <Option key={imageName} value={image} >{imageName}</Option>
                             })
                         }
                     </Select><br/>
                     <Input type="text" placeholder="Categoria" onChange={(e) => setCategory(e.target.value)}/>
-                    <ElBoton type="button" onClick={()=>setCategory([...categories, categoryInput ] )}>Añadir Categoria</ElBoton><br/>
-                    <Select onChange={(e)=>selectedCategory(e.target.value)}>
-                        {categories?.map(category => <Option value={category}>{category}</Option>)}
+                    <ElBoton type="button" onClick={()=>setCategoryList([...categoryList, category] )}>Añadir Categoria</ElBoton><br/>
+                    <Select ref={categorySelect} /*onChange={(e)=>setOption({...option, category:e.target.value})}*/>
+                        {categoryList?.map(categoryUnit => <Option key={categoryUnit} value={categoryUnit}>{categoryUnit}</Option>)}
                     </Select>
-                    <Input type="text" placeholder="Opción" onChange={(e) => setOptionInput(e.target.value) }/>
-                    <Input type="number" placeholder="Precio" onChange={(e) => setOptPrice(e.target.value)}/>
-                    <ElBoton type="button" onClick={()=>setOptions([...options, {category:selectedCategory, option:optionInput, price:optPrice}])}>Añadir opción</ElBoton>
-                
+                    <Input type="text" placeholder="Opción" onChange={(e) => setOption({...option, option: e.target.value}) }/>
+                    <Input type="number" placeholder="Precio" onChange={(e) => setOption({...option, price: e.target.value})}/>
+                    <ElBoton type="button" onClick={()=>setProduct({...product, options:[...product.options, { ...option, category:categorySelect.current.value }]})}>Añadir opción</ElBoton>
+                    <ElBoton type="button" onClick={()=> uploadProduct(product)} > Subir Producto</ElBoton> 
                         
 
 
