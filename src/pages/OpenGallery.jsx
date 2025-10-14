@@ -1,6 +1,7 @@
+// src/pages/OpenGallery.jsx
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Title, ContainerDiv, Imagen } from "../Styled/GalleryStyles";
+import { Title, ContainerDiv, GalleryCard, GalleryImage } from "../Styled/GalleryStyles";
 import { getAllImages } from "../services/upload";
 
 const OpenGallery = () => {
@@ -18,11 +19,13 @@ const OpenGallery = () => {
       <ContainerDiv>
         {images.length > 0 ? (
           images.map((imgUrl, index) => (
-            <Link key={index} to={"/ArtistGallery"}>
-              <Imagen
-                src={`http://localhost:8082${imgUrl}`}
-                alt={`imagen-${index}`}
-              />
+            <Link key={index} to="/ArtistGallery" style={{ textDecoration: 'none' }}>
+              <GalleryCard>
+                <GalleryImage
+                  src={`http://localhost:8082${imgUrl}`}
+                  alt={`imagen-${index}`}
+                />
+              </GalleryCard>
             </Link>
           ))
         ) : (
