@@ -1,6 +1,7 @@
+// Gallery.jsx
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Title, ContainerDiv, Imagen } from "../Styled/GalleryStyles";
+import { Title, ContainerDiv, GalleryCard, GalleryImage } from "../Styled/GalleryStyles";
 import { getUserImages } from "../services/upload";
 
 const Gallery = () => {
@@ -18,11 +19,13 @@ const Gallery = () => {
             <ContainerDiv>
                 {images.length > 0 ? (
                     images.map((imgUrl, index) => (
-                        <Link key={index} to={"/Artistas"}>
-                            <Imagen
-                                src={`http://localhost:8082${imgUrl}`}
-                                alt={`imagen-${index}`}
-                            />
+                        <Link key={index} to="/Artistas" style={{ textDecoration: 'none' }}>
+                            <GalleryCard>
+                                <GalleryImage
+                                    src={`http://localhost:8082${imgUrl}`}
+                                    alt={`imagen-${index}`}
+                                />
+                            </GalleryCard>
                         </Link>
                     ))
                 ) : (
