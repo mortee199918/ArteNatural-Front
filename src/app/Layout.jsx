@@ -4,6 +4,7 @@ import useToken from '../hooks/useToken';
 import { Link } from 'react-router-dom';
 import { Navbar, Brand, Hamburguesa, Linked, GlobalStyles } from '../Styled/LayoutStyles';
 import { getUserFromToken } from '../services/user';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -13,6 +14,7 @@ const Layout = () => {
     const { deleteToken, token } = useToken();
     const [user, setUser] = useState();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const navigate = useNavigate();
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
@@ -43,7 +45,8 @@ const Layout = () => {
                             e.preventDefault();
                             deleteToken();
                             alert("sesion cerrada con exito");
-                            setIsMenuOpen(false)
+                            setIsMenuOpen(false);
+                            navigate("/Login");
                         }}
                         >Cerrar sesión</a> : <Link to={"/Login"}>Iniciar sesion</Link>}</li>
 
