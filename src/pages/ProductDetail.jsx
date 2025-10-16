@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import useToken from "../hooks/useToken";
 import { getProductById } from "../services/product";
+import { useCart } from "./CartContext";
 import {
   Container,
   BackButton,
@@ -26,6 +27,7 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   const [selectedOptions, setSelectedOptions] = useState({});
   const [totalPrice, setTotalPrice] = useState(0);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     getProductById(id)
@@ -129,6 +131,15 @@ const ProductDetail = () => {
 
           <TotalPrice>Total: ${totalPrice.toFixed(2)}</TotalPrice>
           <BuyButton onClick={handleBuy}>Comprar</BuyButton>
+          <BuyButton
+            style={{ backgroundColor: "#28a745" }}
+            onClick={() => {
+              addToCart(product, selectedOptions, totalPrice);
+              alert("Producto añadido al carrito");
+            }}
+          >
+            Añadir a la cesta
+          </BuyButton>
         </ProductInfo>
       </Content>
     </Container>

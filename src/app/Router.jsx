@@ -12,6 +12,7 @@ import OpenGallery from '../pages/OpenGallery';
 import ArtworkDetail from '../pages/ArtworkDetail';
 import ProductDetail from '../pages/ProductDetail';
 import CheckoutPage from '../pages/CheckoutPage';
+import CartPage from '../pages/CartPage';
 const Router = () => {
   const [isAuthenticated, setAuthenticated] = useState()
   const { token, deleteToken } = useToken();
@@ -42,6 +43,7 @@ const Router = () => {
         <Route path="/Perfil" element={isAuthenticated ? <Perfil /> : <Login />} />
         <Route path="/open-gallery" element={<OpenGallery />} />
         <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/cart" element={<CartPage />} />
         < Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/Gallery" element={<Gallery />} />
         <Route path='/ArtistGallery' element={<ArtworkDetail />} />
