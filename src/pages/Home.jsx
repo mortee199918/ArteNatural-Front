@@ -45,7 +45,7 @@ const Home = () => {
                 <CardFooter>
                   <Prince>${artwork.price}</Prince>
                   <CardBoton>
-                    {/* Botón "Ver detalles" */}
+                    
                     <Link to={`/artwork/${artwork.id}`} className="btn-buy">
                       Ver detalles
                     </Link>
