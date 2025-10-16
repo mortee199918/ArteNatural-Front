@@ -34,6 +34,13 @@ export const ElBoton = styled.button`
     width: 150px;
     font-size: 1.1em;
     margin: auto;
+     :hover {
+        background-color: #ffa8ff;
+        cursor: pointer;
+    }
+    :focus {
+        background-color: #E63EE6;
+    }
     
 `
 export const Input = styled.input `
@@ -45,5 +52,12 @@ export const Input = styled.input `
     width: 350px;
     font-size: 1.1em;
     margin: auto;
+    :hover {
+        background-color: #e3e3e3;
+        cursor: pointer;
+    }
+    :focus {
+        background-color: #ffd7ff;
+    }
 
 `

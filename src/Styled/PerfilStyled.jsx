@@ -38,6 +38,10 @@ export const ElBoton = styled.button`
     width: 50px;
     font-size: 1.1em;
     margin: auto;
+    :hover {
+        background-color: #9e479e;
+        cursor: pointer;
+    }
     
 `
 export const Input = styled.input `

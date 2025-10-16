@@ -21,6 +21,7 @@ const Perfil = () => {
                 <Texto><label>Username:</label><Input type="text" defaultValue={user?.username} onChange={(e)=>setUser({...user, username: e.target.value})}/></Texto>
            
                 <Texto> <label>Password:</label><Input type="password" onChange={(e)=>setPassword(e.target.value)}/></Texto>
+            
                 <Texto><label> Password Verification:</label><Input type="password" onChange={(e)=>setVerifiedPassword(e.target.value)} /></Texto>
                 <Texto> <label>Fecha de Nacimento: </label> <Input type="date" defaultValue={user?.birthdate.slice(0, 10)} onChange={(e)=>setUser({...user, birthdate: e.target.value})}/></Texto>
                 <Texto> <label> Email: </label> <Input type="email" defaultValue={user?.mail} onChange={(e)=>setUser({...user, mail:e.target.value})}/></Texto>  
