@@ -44,8 +44,11 @@ export const unsetToken = () => {
 };
 export const validateToken = async () => {
 
-   
+   try{
     const res = await api.get("/auth/validate");
-    
-    return res.status === 200;
+    return true;
+
+   }catch(e){
+    return false;
+   }
 };

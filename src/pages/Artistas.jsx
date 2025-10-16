@@ -44,9 +44,9 @@ const Artistas = ({user}) => {
                         }
                     </Select><br/>
                     <Input type="text" placeholder="Categoria" onChange={(e) => setCategory(e.target.value)}/>
-                    <ElBoton type="button" onClick={()=>setCategoryList([...categoryList, category] )}>Añadir Categoria</ElBoton><br/>
-                    <Select ref={categorySelect} /*onChange={(e)=>setOption({...option, category:e.target.value})}*/>
-                        {categoryList?.map(categoryUnit => <Option key={categoryUnit} value={categoryUnit}>{categoryUnit}</Option>)}
+                    <ElBoton type="button" onClick={()=>setCategory([...categories, categoryInput ] )}>Añadir Categoria</ElBoton><br/>
+                    <Select onChange={(e)=>selectedCategory(e.target.value)}>
+                        {product.options.reduce((acc, option)=> acc.includes(option.category) ? acc : [...acc, option.category], []).map(category => <Option key={category} value={category}>{category}</Option>)}
                     </Select>
                     <Input type="text" placeholder="Opción" onChange={(e) => setOption({...option, option: e.target.value}) }/>
                     <Input type="number" placeholder="Precio" onChange={(e) => setOption({...option, price: e.target.value})}/>
