@@ -107,7 +107,7 @@ const ProductDetail = () => {
           <Title>{product.title}</Title>
           <Description>{product.description}</Description>
           <BasePrice>
-            <strong>Precio base:</strong> ${product.price.toFixed(2)}
+            <strong>Precio base:</strong> {product.price.toFixed(2)}€
           </BasePrice>
 
           {Object.entries(optionsByCategory).map(([category, opts]) => (
@@ -122,14 +122,14 @@ const ProductDetail = () => {
                 <option value="">Selecciona una opción</option>
                 {opts.map((opt) => (
                   <option key={opt.id} value={opt.option}>
-                    {opt.option} (+${opt.price.toFixed(2)})
+                    {opt.option} (+{opt.price.toFixed(2)}€)
                   </option>
                 ))}
               </OptionSelect>
             </OptionGroup>
           ))}
 
-          <TotalPrice>Total: ${totalPrice.toFixed(2)}</TotalPrice>
+          <TotalPrice>Total: {totalPrice.toFixed(2)}€</TotalPrice>
           <BuyButton onClick={handleBuy}>Comprar</BuyButton>
           <BuyButton
             style={{ backgroundColor: "#28a745" }}

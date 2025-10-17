@@ -1,6 +1,10 @@
 import styled from "@emotion/styled";
 import { css, Global } from "@emotion/react";
 
+const desktopStartWidth = 768;
+
+const desktop = `@media (min-width: ${desktopStartWidth}px)`;
+const mobile = `@media (max-width: ${desktopStartWidth}px)`;
 export const GlobalStyles = () => (
   <Global
     styles={css`
@@ -126,4 +130,32 @@ export const Hamburguesa = styled.div`
     display: flex;
   }
 `;
+export const Footer = styled.footer`
+background-color: #ff8ff02d;
+color: #33036f;
+box-shadow: -3px 0 3px #9f088a76;
+${desktop}{
+display: flex;
+justify-content: space-between;
+}
+div>div {
+  display: block;
+  align-self: top;
+  width: 300px;
+  max-width: 30vw;
+  float: left;
+  padding: 15px;
+  text-align: left;
+  ${mobile} {
+    background-color: #0f8ef018;
+		width:100%;
+    max-width: 100%;
+    text-align: center;
+	}
+  ul{
+    list-style: none;  
+  }
+  
+}
 
+`

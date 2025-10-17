@@ -41,18 +41,27 @@ export const ProductInfo = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #333;
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  border-radius: 30px;
+  width: fit-content;
+  text-align: center;
+  margin: 80px auto 2rem auto;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px #000000;
+  padding: 0.5rem 1.5rem;
 `;
 
 export const Description = styled.p`
   color: #555;
   margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  font-style: italic;
 `;
 
 export const BasePrice = styled.p`
   margin-bottom: 1.5rem;
+  color: #EB65EB;
 `;
 
 export const OptionGroup = styled.div`

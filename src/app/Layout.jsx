@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import useToken from '../hooks/useToken';
 import { Link } from 'react-router-dom';
-import { Navbar, Brand, Hamburguesa, Linked, GlobalStyles } from '../Styled/LayoutStyles';
+import { Navbar, Brand, Hamburguesa, Linked, GlobalStyles, Footer } from '../Styled/LayoutStyles';
 import { getUserFromToken } from '../services/user';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../pages/CartContext';
@@ -63,6 +63,36 @@ const Layout = () => {
                     </Linked>
                 </Navbar>
                 <Outlet></Outlet>
+                <Footer>
+                    <div><div>
+                        <h2>Contacto</h2>
+                        <ul>
+                            <li>Whatsapp</li>
+                            <li>+34 722643267</li>
+                            <li> Carrer Berlin, 67 </li>
+                            <li>artenatural@fundacioesplai.com</li>
+                            
+                        </ul>
+                    </div></div>
+                    <div><div>
+                        <h2>Ayuda</h2>
+                        <ul>
+                            <li>Perfil</li>
+                            <li>Artistas</li>
+                            <li> Compras </li>
+                            <li>Encargos</li>
+                            <li>Pagos</li>
+                            
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>About</h2>
+                        <ul>
+                            <li>x</li>
+                            <li>y</li>
+                        </ul>
+                    </div></div>
+                </Footer>
             </div>
         </>
     );
