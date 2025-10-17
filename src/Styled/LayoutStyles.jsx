@@ -62,21 +62,27 @@ export const Brand = styled.div`
   }
 `;
 
-export const Linked = styled.ul`
+export const Linked =  styled.ul`
   display: flex;
   list-style: none;
   gap: 1.2rem;
 
   a {
     text-decoration: none;
-    color: var(--text-color);
+    //color: var(--text-color);
     font-weight: bold;
     text-shadow: 1px 1px 2px #000;
     padding: 0.4rem 0.8rem;
     border-radius: 30px;
+    color: white;
+    
     transition: background 0.3s;
     cursor: pointer;
+    :nth-of-type(4){
+      color: black;
+    }
   }
+
 
   a:hover {
     background-color: rgba(0, 0, 0, 0.2);
