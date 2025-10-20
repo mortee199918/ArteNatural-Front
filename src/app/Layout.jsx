@@ -77,7 +77,7 @@ const Layout = () => {
                     <div><div>
                         <h2>Ayuda</h2>
                         <ul>
-                            <li>Perfil</li>
+                            <li><Link to={"/HelpPerfil"}>Perfil</Link></li>
                             <li>Artistas</li>
                             <li> Compras </li>
                             <li>Encargos</li>

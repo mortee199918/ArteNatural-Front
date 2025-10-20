@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Title, ContainerDiv, GalleryCard, GalleryImage } from "../Styled/GalleryStyles";
 import { getUserImages } from "../services/upload";
+import {apiurl} from "../services/api"
+
 
 const Gallery = () => {
     const [images, setImages] = useState([]);
@@ -19,12 +21,13 @@ const Gallery = () => {
             <ContainerDiv>
                 {images.length > 0 ? (
                     images.map((imgUrl, index) => (
-                        <Link key={index} to="/Artistas" style={{ textDecoration: 'none' }}>
+                        <Link key={index}  style={{ textDecoration: 'none' }}>
                             <GalleryCard>
                                 <GalleryImage
-                                    src={`http://localhost:8082${imgUrl}`}
+                                    src={apiurl + imgUrl}
                                     alt={`imagen-${index}`}
                                 />
+                            
                             </GalleryCard>
                         </Link>
                     ))
