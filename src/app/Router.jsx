@@ -47,7 +47,7 @@ const Router = () => {
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/Gallery" element={<Gallery />} />
         <Route path='/HelpPerfil' element={<HelpPerfil />} />
-        <Route path='/ArtistGallery' element={<ArtworkDetail />} />
+
 
       </Route>
       <Route path="*" element={<div>404</div>} />
