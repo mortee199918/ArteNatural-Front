@@ -84,10 +84,10 @@ const Layout = () => {
                         <h2>Ayuda</h2>
                         <ul>
                             <li><Link to={"/HelpPerfil"}>Perfil</Link></li>
-                            <li>Artistas</li>
-                            <li> Compras </li>
-                            <li>Encargos</li>
-                            <li>Pagos</li>
+                            <li><Link to={"/HelpArtist"}>Artistas</Link></li>
+                            <li><Link to={"/HelpCompras"}>Compras</Link></li>
+                            <li><Link to={"/HelpEncargos"}>Encargos</Link></li>
+                            <li><Link to={"/HelpPagos"}>Pagos</Link></li>
 
                         </ul>
                     </div>

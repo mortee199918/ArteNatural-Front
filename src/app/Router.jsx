@@ -14,6 +14,10 @@ import ProductDetail from '../pages/ProductDetail';
 import CheckoutPage from '../pages/CheckoutPage';
 import CartPage from '../pages/CartPage';
 import HelpPerfil from '../pages/helps/HelpPerfil';
+import HelpArtist from '../pages/helps/HelpArtist';
+import HelpCompras from '../pages/helps/HelpCompras';
+import HelpEncargos from '../pages/helps/HelpEncargos';
+import HelpPagos from '../pages/helps/HelpPagos';
 const Router = () => {
   const [isAuthenticated, setAuthenticated] = useState()
   const { token, deleteToken } = useToken();
@@ -49,6 +53,11 @@ const Router = () => {
         <Route path="/Gallery" element={<Gallery />} />
         <Route path='/HelpPerfil' element={<HelpPerfil/>} />
         <Route path='/ArtistGallery' element={<ArtworkDetail />} />
+        <Route path='/HelpArtist' element={<HelpArtist/>} />
+        <Route path='/HelpCompras' element={<HelpCompras/>} />
+        <Route path='/HelpEncargos' element={<HelpEncargos/>} />
+        <Route path='/HelpPagos' element={<HelpPagos/>} />
+       
 
       </Route>
       <Route path="*" element={<div>404</div>} />
