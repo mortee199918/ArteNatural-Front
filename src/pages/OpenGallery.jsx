@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Title, ContainerDiv, GalleryCard, GalleryImage } from "../Styled/GalleryStyles";
 import { getAllPublicProducts } from "../services/product"; // ✅ nuevo servicio
+import { apiurl } from "../services/api";
 
 const OpenGallery = () => {
   const [products, setProducts] = useState([]);
@@ -22,7 +23,7 @@ const OpenGallery = () => {
             <Link key={product.id} to={`/product/${product.id}`} style={{ textDecoration: 'none' }}>
               <GalleryCard>
                 <GalleryImage
-                  src={`http://localhost:8082${product.image}`}
+                  src={apiurl +product.image}
                   alt={product.title}
                 />
               </GalleryCard>

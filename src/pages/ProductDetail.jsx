@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import useToken from "../hooks/useToken";
 import { getProductById } from "../services/product";
+import { apiurl } from "../services/api";
 import { useCart } from "./CartContext";
 import {
   Container,
@@ -99,7 +100,7 @@ const ProductDetail = () => {
 
       <Content>
         <ProductImage
-          src={`http://localhost:8082${product.image}`}
+          src={apiurl +product.image}
           alt={product.title}
         />
 
