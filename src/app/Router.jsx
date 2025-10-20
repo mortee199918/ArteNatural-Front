@@ -9,7 +9,6 @@ import useToken from '../hooks/useToken';
 import { validateToken, unsetToken, setAuth } from '../services/auth';
 import { useState, useEffect } from 'react';
 import OpenGallery from '../pages/OpenGallery';
-import ArtworkDetail from '../pages/ArtworkDetail';
 import ProductDetail from '../pages/ProductDetail';
 import CheckoutPage from '../pages/CheckoutPage';
 import CartPage from '../pages/CartPage';
@@ -49,9 +48,9 @@ const Router = () => {
         <Route path="/open-gallery" element={<OpenGallery />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/cart" element={<CartPage />} />
-        < Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/Gallery" element={<Gallery />} />
-        <Route path='/HelpPerfil' element={<HelpPerfil/>} />
+        <Route path='/HelpPerfil' element={<HelpPerfil />} />
         <Route path='/ArtistGallery' element={<ArtworkDetail />} />
         <Route path='/HelpArtist' element={<HelpArtist/>} />
         <Route path='/HelpCompras' element={<HelpCompras/>} />
