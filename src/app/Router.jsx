@@ -13,6 +13,7 @@ import ProductDetail from '../pages/ProductDetail';
 import CheckoutPage from '../pages/CheckoutPage';
 import CartPage from '../pages/CartPage';
 import HelpPerfil from '../pages/helps/HelpPerfil';
+
 const Router = () => {
   const [isAuthenticated, setAuthenticated] = useState()
   const { token, deleteToken } = useToken();
@@ -47,7 +48,6 @@ const Router = () => {
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/Gallery" element={<Gallery />} />
         <Route path='/HelpPerfil' element={<HelpPerfil />} />
-
 
       </Route>
       <Route path="*" element={<div>404</div>} />

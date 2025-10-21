@@ -31,7 +31,7 @@ const Home = () => {
   return (
     <div className="home-container">
     
-      {/* Contenido principal */}
+      
       <Main>
         <Title>Obras destacadas</Title>
         <ArtWorks>
