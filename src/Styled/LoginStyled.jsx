@@ -19,29 +19,31 @@ export const Texto = styled.p`
     text-shadow: 1px 1px 2px #000;
     min-width: 130px; 
     font-size: 1.2em;
-
+    
 `
 export const Container = styled.div`
     margin: auto;
     height: fit-content;
-    width: 250px;
+    width: 380px;
     text-align: center;
     background-color: #6DAFB3;
     border-radius: 30px 30px 30px 30px;
-    margin-top: 60px;
+    margin-top: 20px;
     padding: 20px;
+    margin-bottom: 20px;
 
 `
 export const Boton = styled.button`
     height: 50px;
     width: 90px;
-    margin: 0 3px;
+    margin: 7px 3px;
     justify-content: space-between;
     border: 3px solid   #de98de; 
     background-color:  #FAD9FA;
     color: black;
     border-radius: 30px 30px 30px 30px;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 
 `
 export const Input = styled.input`

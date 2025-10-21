@@ -6,7 +6,10 @@ import { uploadProduct } from "../services/product";
 
 const Artistas = ({user}) => {
     const [uploadImage,setUploadImage] = useState();
-    const [product, setProduct] = useState({options:[], image:user?.artistData.images[0]});
+    const [product, setProduct] = useState({options:[], image:
+        user?.artistData? 
+        user.artistData.images[0] :
+        null});
     const [categoryInput, setCategoryInput] = useState(); 
     const [categories, setCategories] = useState([]);
     const categorySelect = useRef();
@@ -38,7 +41,7 @@ const Artistas = ({user}) => {
                     <br />
                     <Select onChange={e => setProduct({...product, image: e.target.value})}> 
                         {
-                            user?.artistData.images.map(image => {
+                            user?.artistData?.images.map(image => {
                                 const imageName = image.slice(image.lastIndexOf("/")+1)
                                 return <Option key={imageName} value={image} >{imageName}</Option>
                             })

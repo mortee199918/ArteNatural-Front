@@ -12,6 +12,16 @@ export const Titulo = styled.h1`
     text-shadow: 2px 2px 4px #000000;
 
 `
+export const MinTitulo = styled.h2 `
+    text-align: center;
+    margin-top: 50px;
+    margin: auto;
+    padding: 10px;
+    color: #CFCF9D;
+
+
+
+`
 export const Granja = styled.div `
     margin: auto;
     height: fit-content;
@@ -26,14 +36,11 @@ export const Granja = styled.div `
 
 `
 export const SubTitulo = styled.h3 `
-:after {
-      content: "";
-      display: flex;
-      width: 15%; 
-      height: 2px;
-      background-color: white; 
-      margin-left: 520px;
-    }
+    text-align: center;
+    margin-top: 50px;
+    margin: auto;
+    padding: 10px;
+    color: #CFCF9D;
 `
 export const Comentarios = styled.input `
  width: 350px;
@@ -63,5 +70,12 @@ export const Lineup = styled.p`
 `
 export const Warning = styled.p`
     color: red; 
+
+`
+export const Center = styled.p`
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
 
 `

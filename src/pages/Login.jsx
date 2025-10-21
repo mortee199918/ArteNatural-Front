@@ -18,8 +18,8 @@ const Login = () => {
        <>
          <Title>Login</Title>
          <Container>
-            <Texto> Nombre de Usuario: <Input type="text" value={username} className='ConatinerInput' placeholder="username" onChange={(e) => setUsername(e.target.value)} /></Texto>
-            <Texto> Contraseña: <Input type="password" value={password} className='ContainerInput' placeholder="password" onChange={(e) => setPassword(e.target.value)} /></Texto>
+            <Texto> Nombre de Usuario: <br/><Input type="text" value={username} className='ConatinerInput' placeholder="username" onChange={(e) => setUsername(e.target.value)} /></Texto>
+            <Texto> Contraseña: <br/> <Input type="password" value={password} className='ContainerInput' placeholder="password" onChange={(e) => setPassword(e.target.value)} /></Texto>
             <Boton onClick={() => {
                console.log(username, password);
 

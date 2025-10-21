@@ -60,10 +60,9 @@ const Register = () => {
           </Label>
         </div>
 
-        <Boton type="submit" onClick={() => {
+        <Boton type="button" onClick={() => {
           if (password === verifiedPassword){
-            register(username, password, role, birthdate, email),
-            navigate("/Login");
+            register(username, password, role, birthdate, email).then(() => navigate('/Login'))
           }
 
           else
