@@ -94,8 +94,8 @@ const Layout = () => {
                         <div>
                             <h2>About</h2>
                             <ul>
-                                <li><Link to={"/X"}>X</Link></li>
-                                <li><Link to={"/Y"}>Y</Link></li>
+                                <li><Link to={"/X"}>Privacidad</Link></li>
+                                <li><Link to={"/Y"}>Descargo de Resposabilidad</Link></li>
                             </ul>
                         </div></div>
                 </Footer>
