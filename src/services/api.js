@@ -1,7 +1,9 @@
 import axios from "axios";
-  export const apiurl = 'https://artenaturalback-production.up.railway.app'
+// export const apiurl = 'https://artenaturalback-production.up.railway.app'
 
- const api = axios.create({ baseURL: apiurl });
-  
+export const apiurl = 'http://localhost:8082'
 
- export default api
+const api = axios.create({ baseURL: apiurl });
+
+
+export default api
