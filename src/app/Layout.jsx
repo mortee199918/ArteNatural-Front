@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import useToken from '../hooks/useToken';
 import { Link } from 'react-router-dom';
-import { Navbar, Brand, Hamburguesa, Linked, GlobalStyles, Footer } from '../Styled/LayoutStyles';
+import { Navbar, Brand, Hamburguesa, Linked, GlobalStyles, Footer, DisabledCart } from '../Styled/LayoutStyles';
 import { getUserFromToken } from '../services/user';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../pages/CartContext';
@@ -38,7 +38,7 @@ const Layout = () => {
                         <span></span>
                         <span></span>
                     </Hamburguesa>
-                    <Linked className={`nav-links ${isMenuOpen ? 'active' : ''}`} isCartDisabled={getItemCount() === 0 }>
+                    <Linked className={`nav-links ${isMenuOpen ? 'active' : ''}`} isCartDisabled={getItemCount() === 0}>
                         <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Inicio</Link></li>
                         {user?.roles[0].roleName === "ARTIST" &&
                             <li><Link to="/Gallery" onClick={() => setIsMenuOpen(false)}>Mi Galería</Link></li>}
@@ -46,9 +46,15 @@ const Layout = () => {
                         <li><Link to='/open-gallery' onClick={() => setIsMenuOpen(false)}> Galería General</Link></li>
                         {/* {getItemCount() > 0 && ( */
                             <li>
-                                <Link to="/cart" onClick={() => setIsMenuOpen(false)} >
-                                    🛒 Carrito {getItemCount()!== 0 ? '('+ getItemCount() + ')' :''}
-                                </Link>
+                                {getItemCount() > 0 ? (
+                                    <Link to="/cart" onClick={() => setIsMenuOpen(false)}>
+                                        🛒 Carrito ({getItemCount()})
+                                    </Link>
+                                ) : (
+                                    <DisabledCart>
+                                        🛒 Carrito (0)
+                                    </DisabledCart>
+                                )}
                             </li>
                         /* )} */}
                         <li>{token ? <a onClick={(e) => {
@@ -71,27 +77,27 @@ const Layout = () => {
                             <li>+34 722643267</li>
                             <li> Carrer Berlin, 67 </li>
                             <li>artenatural@fundacioesplai.com</li>
-                            
+
                         </ul>
                     </div></div>
                     <div><div>
                         <h2>Ayuda</h2>
                         <ul>
-                            <li>Perfil</li>
-                            <li>Artistas</li>
-                            <li> Compras </li>
-                            <li>Encargos</li>
-                            <li>Pagos</li>
-                            
+                            <li><Link to={"/HelpPerfil"}>Perfil</Link></li>
+                            <li><Link to={"/HelpArtist"}>Artistas</Link></li>
+                            <li><Link to={"/HelpCompras"}>Compras</Link></li>
+                            <li><Link to={"/HelpEncargos"}>Encargos</Link></li>
+                            <li><Link to={"/HelpPagos"}>Pagos</Link></li>
+
                         </ul>
                     </div>
-                    <div>
-                        <h2>About</h2>
-                        <ul>
-                            <li>x</li>
-                            <li>y</li>
-                        </ul>
-                    </div></div>
+                        <div>
+                            <h2>About</h2>
+                            <ul>
+                                <li><Link to={"/X"}>X</Link></li>
+                                <li><Link>Y</Link></li>
+                            </ul>
+                        </div></div>
                 </Footer>
             </div>
         </>

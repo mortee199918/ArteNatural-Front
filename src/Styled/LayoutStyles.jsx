@@ -62,7 +62,7 @@ export const Brand = styled.div`
   }
 `;
 
-export const Linked =  styled.ul`
+export const Linked = styled.ul`
   display: flex;
   list-style: none;
   gap: 1.2rem;
@@ -135,6 +135,13 @@ export const Hamburguesa = styled.div`
   @media (max-width: 818px) {
     display: flex;
   }
+`;
+
+export const DisabledCart = styled.span`
+  color: #888;
+  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: none;
 `;
 export const Footer = styled.footer`
 background-color: #ff8ff02d;

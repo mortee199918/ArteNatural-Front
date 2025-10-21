@@ -9,10 +9,15 @@ import useToken from '../hooks/useToken';
 import { validateToken, unsetToken, setAuth } from '../services/auth';
 import { useState, useEffect } from 'react';
 import OpenGallery from '../pages/OpenGallery';
-import ArtworkDetail from '../pages/ArtworkDetail';
 import ProductDetail from '../pages/ProductDetail';
 import CheckoutPage from '../pages/CheckoutPage';
 import CartPage from '../pages/CartPage';
+import HelpPerfil from '../pages/helps/HelpPerfil';
+import HelpArtist from '../pages/helps/HelpArtist';
+import HelpCompras from '../pages/helps/HelpCompras';
+import HelpEncargos from '../pages/helps/HelpEncargos';
+import HelpPagos from '../pages/helps/HelpPagos';
+import X from '../pages/helps/X';
 const Router = () => {
   const [isAuthenticated, setAuthenticated] = useState()
   const { token, deleteToken } = useToken();
@@ -44,9 +49,15 @@ const Router = () => {
         <Route path="/open-gallery" element={<OpenGallery />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/cart" element={<CartPage />} />
-        < Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/Gallery" element={<Gallery />} />
-        <Route path='/ArtistGallery' element={<ArtworkDetail />} />
+        <Route path='/HelpPerfil' element={<HelpPerfil />} />
+        <Route path='/HelpArtist' element={<HelpArtist/>} />
+        <Route path='/HelpCompras' element={<HelpCompras/>} />
+        <Route path='/HelpEncargos' element={<HelpEncargos/>} />
+        <Route path='/HelpPagos' element={<HelpPagos/>} />
+        <Route path='/X' element={<X/>} />
+       
 
       </Route>
       <Route path="*" element={<div>404</div>} />
