@@ -61,3 +61,7 @@ export const Puntos = styled.ul`
 export const Lineup = styled.p`
     font-size: large;
 `
+export const Warning = styled.p`
+    color: red; 
+
+`

@@ -18,6 +18,11 @@ import HelpCompras from '../pages/helps/HelpCompras';
 import HelpEncargos from '../pages/helps/HelpEncargos';
 import HelpPagos from '../pages/helps/HelpPagos';
 import X from '../pages/helps/X';
+import Y from '../pages/helps/Y';
+import Contactos from '../pages/helps/Contactos';
+
+
+
 const Router = () => {
   const [isAuthenticated, setAuthenticated] = useState()
   const { token, deleteToken } = useToken();
@@ -56,7 +61,9 @@ const Router = () => {
         <Route path='/HelpCompras' element={<HelpCompras/>} />
         <Route path='/HelpEncargos' element={<HelpEncargos/>} />
         <Route path='/HelpPagos' element={<HelpPagos/>} />
+        <Route path='/Contacto' element={<Contactos/>} />
         <Route path='/X' element={<X/>} />
+        <Route path='/Y' element={<Y/>} />
        
 
       </Route>
