@@ -94,8 +94,8 @@ const Layout = () => {
                         <div>
                             <h2>About</h2>
                             <ul>
-                                <li>x</li>
-                                <li>y</li>
+                                <li><Link to={"/X"}>X</Link></li>
+                                <li><Link>Y</Link></li>
                             </ul>
                         </div></div>
                 </Footer>

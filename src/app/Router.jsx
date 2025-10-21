@@ -17,6 +17,7 @@ import HelpArtist from '../pages/helps/HelpArtist';
 import HelpCompras from '../pages/helps/HelpCompras';
 import HelpEncargos from '../pages/helps/HelpEncargos';
 import HelpPagos from '../pages/helps/HelpPagos';
+import X from '../pages/helps/X';
 const Router = () => {
   const [isAuthenticated, setAuthenticated] = useState()
   const { token, deleteToken } = useToken();
@@ -51,11 +52,11 @@ const Router = () => {
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/Gallery" element={<Gallery />} />
         <Route path='/HelpPerfil' element={<HelpPerfil />} />
-        <Route path='/ArtistGallery' element={<ArtworkDetail />} />
         <Route path='/HelpArtist' element={<HelpArtist/>} />
         <Route path='/HelpCompras' element={<HelpCompras/>} />
         <Route path='/HelpEncargos' element={<HelpEncargos/>} />
         <Route path='/HelpPagos' element={<HelpPagos/>} />
+        <Route path='/X' element={<X/>} />
        
 
       </Route>
