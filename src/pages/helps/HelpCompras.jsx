@@ -13,19 +13,19 @@ const HelpCompras = () => {
                                 <Link to={"/Perfil"}>Perfil</Link>
                             </li>
                             <li>
-                            <a>Con este enlace puedes entrar a la página de ayuda en el perfil para si no te acurdas de la contraseña o cambiar alguna cosa.</a>
+                            <a>Con este enlace puedes entrar a la página de  perfil para si no te acurdas de la contraseña o cambiar alguna cosa.</a>
                             </li>
                             <li>
                                 <Link to={"/Register"}>Registro</Link>
                             </li>
                             <li>
-                            <a>Con este enlace puedes entrar a la página de ayuda para si cuenta a sido bloqueada o quieres hacer una nueva cuenta te lleva el registro. </a>
+                            <a>Con este enlace puedes entrar a la página  para si cuenta a sido bloqueada o quieres hacer una nueva cuenta te lleva el registro. </a>
                             </li>
                             <li>
                                 <Link to={"/card"}>Carrito</Link>
                             </li>
                             <li>
-                            <a>Con este enlace puedes entrar a la página de ayuda del carrito para comprovar que las compras que quieres funcione bien.</a>
+                            <a>Con este enlace puedes entrar a la página del carrito para comprovar que las compras que quieres funcione bien.</a>
                             </li>
                             <li>
                                 <Link to={"/HelpPagos"}>Pagos</Link>
@@ -33,7 +33,7 @@ const HelpCompras = () => {
                             <li>
                             <a>Con este enlace puedes entrar a la página de ayuda para ayudar con la compra o venda de articulos en nuestra pàgina.</a>
                             </li>
-                        </Puntos>
+                        </Puntos> <br/>
                     <p> En nuestra app es super importante la valoracion de nuestros clientes, desde el 2023 con la creacion de nuestra empresa nos importa mucho la opionion de nuestros clientes</p>
                     <p>Dejanos tu comentario:</p>
                     <Comentarios type="textarea" placeholder="Deje su comentario:"/>

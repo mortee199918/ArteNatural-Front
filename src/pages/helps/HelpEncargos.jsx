@@ -27,7 +27,7 @@ const HelpEncargos = () => {
                         <li>
                             <a>Con este enlace puedes entrar a la página de ayuda en los pedidos y envios para ayudarte en lo necesites aqui teneis la pagina web de DHL para que mireis si vuestro pedido se enviado o no.</a>
                         </li>
-                    </Puntos>
+                    </Puntos><br/>
                 <p> En nuestra app es super importante la valoracion de nuestros clientes, desde el 2023 con la creacion de nuestra empresa nos importa mucho la opionion de nuestros clientes</p>
                 <p>Dejanos tu comentario:</p>
                 <Comentarios type="textarea" placeholder="Deje su comentario:"/>

@@ -14,13 +14,13 @@ const HelpPagos = () => {
                             <Link to={"./product"}>Encargos</Link>
                         </li>
                         <li>
-                            <a>Con este enlace puedes entrar a la página de ayuda que el encargo sea como lo pidiste.</a>
+                            <a>Con este enlace puedes entrar a la página mirar que el encargo sea como lo pidiste.</a>
                         </li>
                         <li>
                             <Link to={"./card"}>Compras</Link>
                         </li>
                         <li>
-                            <a>Con este enlace puedes entrar a la página de ayuda en mirar si los encargos o la arte que es comprado sea la deseada antes de comprarlo ¡Atentos mirar bien que es lo quereis!</a>
+                            <a>Con este enlace puedes entrar a la página para mirar si los encargos o la arte que es comprado sea la deseada antes de comprarlo ¡Atentos mirar bien que es lo quereis!</a>
                         </li>
                         <li>
                             <a>Metedo de pago:</a>
@@ -43,7 +43,7 @@ const HelpPagos = () => {
                             <a href="https://www.paypal.com/es/home" target="_blank" rel="noopener noreferrer">Paypal</a>
                         </li>
                         
-                    </Puntos>
+                    </Puntos> <br/>
                 <p> En nuestra app es super importante la valoracion de nuestros clientes, desde el 2023 con la creacion de nuestra empresa nos importa mucho la opionion de nuestros clientes</p>
                 <p>Dejanos tu comentario:</p>
                 <Comentarios type="textarea" placeholder="Deje su comentario:"/>
