@@ -6,8 +6,7 @@ import { Navbar, Brand, Hamburguesa, Linked, GlobalStyles, Footer, DisabledCart 
 import { getUserFromToken } from '../services/user';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../pages/CartContext';
-
-
+import { setAuth } from '../services/auth';
 
 
 const Layout = () => {
@@ -21,8 +20,9 @@ const Layout = () => {
         setIsMenuOpen(!isMenuOpen);
     };
     useEffect(() => {
-        getUserFromToken().then(setUser)
-    }, [])
+        if (token){
+        getUserFromToken().then(setUser)}
+    }, [setAuth()])
     return (
 
         <>
