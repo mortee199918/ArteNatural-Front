@@ -46,7 +46,7 @@ const Router = () => {
 
   return <BrowserRouter basename='/ArteNatural-Front'>
     <Routes>
-      
+
       <Route path="/Login" element={<Login />} />
       <Route path="/Register" element={<Register />} />
       <Route path="/" element={<Layout />}>
@@ -58,14 +58,14 @@ const Router = () => {
         <Route path="checkout" element={<CheckoutPage />} />
         <Route path="Gallery" element={<Gallery />} />
         <Route path='HelpPerfil' element={<HelpPerfil />} />
-        <Route path='HelpArtist' element={<HelpArtist/>} />
-        <Route path='HelpCompras' element={<HelpCompras/>} />
-        <Route path='HelpEncargos' element={<HelpEncargos/>} />
-        <Route path='HelpPagos' element={<HelpPagos/>} />
-        <Route path='Contacto' element={<Contactos/>} />
-        <Route path='X' element={<X/>} />
-        <Route path='Y' element={<Y/>} />
-       
+        <Route path='HelpArtist' element={<HelpArtist />} />
+        <Route path='HelpCompras' element={<HelpCompras />} />
+        <Route path='HelpEncargos' element={<HelpEncargos />} />
+        <Route path='HelpPagos' element={<HelpPagos />} />
+        <Route path='Contacto' element={<Contactos />} />
+        <Route path='X' element={<X />} />
+        <Route path='Y' element={<Y />} />
+
 
       </Route>
       <Route path="*" element={<div>404</div>} />
