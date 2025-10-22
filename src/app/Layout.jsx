@@ -98,6 +98,9 @@ const Layout = () => {
                                 <li><Link to={"/Y"}>Descargo de Resposabilidad</Link></li>
                             </ul>
                         </div></div>
+                    <div>
+                        <small>&copy; 2025 ArteNatural. Todos los derechos reservados.</small>
+                    </div>
                 </Footer>
             </div>
         </>

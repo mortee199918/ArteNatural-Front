@@ -17,13 +17,13 @@ import {
   FormGroup,
   Label,
   Input,
-  Select,
   PaymentMethod,
   PaymentOption,
   Button,
   BackLink,
   ErrorMessage,
 } from "../Styled/CheckoutStyles";
+import { apiurl } from "../services/api";
 
 const CheckoutPage = () => {
   const { cart, getTotal, clearCart } = useCart();
@@ -36,11 +36,13 @@ const CheckoutPage = () => {
     address: "",
     city: "",
     postalCode: "",
-    paymentMethod: "card", // 'card', 'paypal', 'bizum'
+    paymentMethod: "card",
   });
 
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [displayCart, setDisplayCart] = useState([]);
+  const [displayTotal, setDisplayTotal] = useState(0);
 
   useEffect(() => {
     if (!token) {
@@ -49,10 +51,38 @@ const CheckoutPage = () => {
       return;
     }
 
-    if (cart.length === 0) {
-      navigate("/cart");
+    // Caso 1: Compra directa (pendingPurchase)
+    const pending = localStorage.getItem("pendingPurchase");
+    if (pending) {
+      try {
+        const data = JSON.parse(pending);
+        const fakeItem = {
+          id: Date.now(),
+          productId: data.productId,
+          title: "Producto seleccionado",
+          image: "", // opcional: podrías cargarlo con una llamada
+          basePrice: data.totalPrice - Object.values(data.selectedOptions).reduce((sum, p) => sum + p, 0),
+          selectedOptions: data.selectedOptions,
+          totalPrice: data.totalPrice,
+        };
+        setDisplayCart([fakeItem]);
+        setDisplayTotal(data.totalPrice);
+        return;
+      } catch (e) {
+        console.error("Error al cargar compra directa", e);
+      }
     }
-  }, [token, cart, navigate]);
+
+    // Caso 2: Carrito normal
+    if (cart.length === 0) {
+      alert("No hay productos para comprar");
+      navigate("/open-gallery");
+      return;
+    }
+
+    setDisplayCart(cart);
+    setDisplayTotal(getTotal());
+  }, [token, cart, getTotal, navigate]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -60,7 +90,6 @@ const CheckoutPage = () => {
   };
 
   const handleConfirmPurchase = async () => {
-    // Validación básica
     if (!formData.name || !formData.email || !formData.address) {
       setError("Por favor, completa todos los campos obligatorios.");
       return;
@@ -73,19 +102,17 @@ const CheckoutPage = () => {
 
     setError("");
     setIsSubmitting(true);
-    console.log("Token enviado:", token);
 
     try {
-      // Aquí iría la llamada a tu backend para crear la compra
-      const response = await fetch("http://localhost:8082/purchases", {
+      const response = await fetch(apiurl + "/purchases", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
-          items: cart,
-          total: getTotal(),
+          items: displayCart,
+          total: displayTotal,
           customer: {
             name: formData.name,
             email: formData.email,
@@ -97,32 +124,35 @@ const CheckoutPage = () => {
 
       if (response.ok) {
         clearCart();
+        localStorage.removeItem("pendingPurchase"); // Limpia compra directa
         alert("¡Compra realizada con éxito! 🎉");
         navigate("/open-gallery");
       } else {
-        const errorData = await response.text();
-        throw new Error(errorData || "Error al procesar la compra");
+        const errorText = await response.text();
+        throw new Error(errorText || "Error al procesar la compra");
       }
     } catch (err) {
-      console.error(err);
+      console.error("Error en la compra:", err);
       setError("Error al procesar la compra. Por favor, inténtalo de nuevo.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  if (cart.length === 0) return null;
+  if (displayCart.length === 0) {
+    return <div style={{ padding: "2rem" }}>Cargando...</div>;
+  }
 
   return (
     <CheckoutContainer>
       <Title>Finalizar Compra</Title>
 
       <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}>
-        {/* Resumen del carrito */}
+        {/* Resumen del pedido */}
         <Section style={{ flex: 2, minWidth: "300px" }}>
           <SectionTitle>Resumen del pedido</SectionTitle>
           <CartSummary>
-            {cart.map((item) => (
+            {displayCart.map((item) => (
               <CartItem key={item.id}>
                 <ItemImage src={`http://localhost:8082${item.image}`} alt={item.title} />
                 <ItemInfo>
@@ -138,7 +168,7 @@ const CheckoutPage = () => {
               </CartItem>
             ))}
           </CartSummary>
-          <TotalAmount>Total: {getTotal().toFixed(2)}€</TotalAmount>
+          <TotalAmount>Total: {displayTotal.toFixed(2)}€</TotalAmount>
         </Section>
 
         {/* Formulario y pago */}
@@ -232,7 +262,7 @@ const CheckoutPage = () => {
         </Section>
       </div>
 
-      <BackLink onClick={() => navigate("/cart")}>&larr; Volver al carrito</BackLink>
+      <BackLink onClick={() => navigate(-1)}>&larr; Volver</BackLink>
     </CheckoutContainer>
   );
 };
