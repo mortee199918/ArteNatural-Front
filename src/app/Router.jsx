@@ -17,8 +17,8 @@ import HelpArtist from '../pages/helps/HelpArtist';
 import HelpCompras from '../pages/helps/HelpCompras';
 import HelpEncargos from '../pages/helps/HelpEncargos';
 import HelpPagos from '../pages/helps/HelpPagos';
-import X from '../pages/helps/X';
-import Y from '../pages/helps/Y';
+import X from '../pages/helps/Privacidad';
+import Y from '../pages/helps/Disclaimer';
 import Contactos from '../pages/helps/Contactos';
 
 
