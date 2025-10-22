@@ -26,7 +26,7 @@ const CartPage = () => {
       return;
     }
     // Guardar carrito en localStorage (ya está guardado, pero aseguramos)
-    localStorage.setItem("cartForCheckout", JSON.stringify(cart));
+    localStorage.setItem("pendingPurchase", JSON.stringify(cart));
     navigate("/checkout");
   };
 
