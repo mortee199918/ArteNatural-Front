@@ -10,7 +10,7 @@ export const uploadImageToBack = async (file) => {
 }
 
 export const getUserImages = async () => {
-    const res = await api.get("/uploads/list"); // ya incluye el token por defecto en api
+    const res = await api.get("/uploads/list"); 
     return res.data;
 };
 
