@@ -501,9 +501,7 @@ div>div {
         background-color: #ffa8ff;
         cursor: pointer;
     }
-    :focus {
-        background-color: #E63EE6;
-    }
+   
     
 `,ha=V.input`
     color: #E63EE6;
