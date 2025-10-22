@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes, useNavigate } from 'react-router-dom';
+import {  HashRouter, Route, Routes } from 'react-router-dom';
 import Login from '../pages/Login';
 import Layout from './Layout';
 import Register from '../pages/Register';
@@ -44,34 +44,34 @@ const Router = () => {
     , [token]);
 
 
-  return <BrowserRouter basename='/ArteNatural-Front'>
+  return <HashRouter>
     <Routes>
 
       <Route path="/Login" element={<Login />} />
       <Route path="/Register" element={<Register />} />
-      <Route path="/" element={<Layout />}>
+      <Route path="" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="Perfil" element={isAuthenticated ? <Perfil /> : <Login />} />
-        <Route path="open-gallery" element={<OpenGallery />} />
-        <Route path="product/:id" element={<ProductDetail />} />
-        <Route path="cart" element={<CartPage />} />
-        <Route path="checkout" element={<CheckoutPage />} />
-        <Route path="Gallery" element={<Gallery />} />
-        <Route path='HelpPerfil' element={<HelpPerfil />} />
-        <Route path='HelpArtist' element={<HelpArtist />} />
-        <Route path='HelpCompras' element={<HelpCompras />} />
-        <Route path='HelpEncargos' element={<HelpEncargos />} />
-        <Route path='HelpPagos' element={<HelpPagos />} />
-        <Route path='Contacto' element={<Contactos />} />
-        <Route path='X' element={<X />} />
-        <Route path='Y' element={<Y />} />
+        <Route path="/Perfil" element={isAuthenticated ? <Perfil /> : <Login />} />
+        <Route path="/open-gallery" element={<OpenGallery />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/Gallery" element={<Gallery />} />
+        <Route path='/HelpPerfil' element={<HelpPerfil />} />
+        <Route path='/HelpArtist' element={<HelpArtist />} />
+        <Route path='/HelpCompras' element={<HelpCompras />} />
+        <Route path='/HelpEncargos' element={<HelpEncargos />} />
+        <Route path='/HelpPagos' element={<HelpPagos />} />
+        <Route path='/Contacto' element={<Contactos />} />
+        <Route path='/X' element={<X />} />
+        <Route path='/Y' element={<Y />} />
 
 
       </Route>
       <Route path="*" element={<div>404</div>} />
     </Routes>
 
-  </BrowserRouter>
+  </HashRouter>
 };
 
 export default Router;

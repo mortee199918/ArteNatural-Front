@@ -34,13 +34,12 @@ export const ElBoton = styled.button`
     width: 150px;
     font-size: 1.1em;
     margin: auto;
+    padding: 2px;
      :hover {
         background-color: #ffa8ff;
         cursor: pointer;
     }
-    :focus {
-        background-color: #E63EE6;
-    }
+   
     
 `
 export const Input = styled.input `

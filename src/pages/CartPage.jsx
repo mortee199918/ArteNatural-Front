@@ -13,6 +13,7 @@ import {
   CheckoutButton,
   EmptyCart,
 } from "../Styled/CartStyles";
+import { apiurl } from "../services/api";
 
 const CartPage = () => {
   const { cart, removeFromCart, getTotal, getItemCount } = useCart();
@@ -45,7 +46,7 @@ const CartPage = () => {
 
       {cart.map((item) => (
         <CartItem key={item.id}>
-          <ItemImage src={`http://localhost:8082${item.image}`} alt={item.title} />
+          <ItemImage src={apiurl+item.image} alt={item.title} />
           <ItemInfo>
             <h3>{item.title}</h3>
             <p>

@@ -168,7 +168,19 @@ div>div {
   ul{
     list-style: none;  
   }
-  
+  a{
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: #33036f;
+    :hover{
+      color: white;
+    }
+  }
+  h2{
+    color: #330dc9
+  }
 }
 
 `
+
