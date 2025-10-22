@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes, useNavigate } from 'react-router-dom';
+import {  HashRouter, Route, Routes } from 'react-router-dom';
 import Login from '../pages/Login';
 import Layout from './Layout';
 import Register from '../pages/Register';
@@ -44,7 +44,7 @@ const Router = () => {
     , [token]);
 
 
-  return <BrowserRouter basename='/ArteNatural-Front'>
+  return <HashRouter>
     <Routes>
       
       <Route path="/Login" element={<Login />} />
@@ -71,7 +71,7 @@ const Router = () => {
       <Route path="*" element={<div>404</div>} />
     </Routes>
 
-  </BrowserRouter>
+  </HashRouter>
 };
 
 export default Router;

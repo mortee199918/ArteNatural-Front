@@ -35,12 +35,14 @@ export const ElBoton = styled.button`
     background-color : #ffffff ;
     text-align: center;
     border-radius: 30px 30px 30px 30px;
-    width: 50px;
+    width: 70px;
     font-size: 1.1em;
     margin: auto;
+    padding: 2px;
     :hover {
         background-color: #9e479e;
         cursor: pointer;
+        color: white;
     }
     
 `
