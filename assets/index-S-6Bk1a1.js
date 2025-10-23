@@ -479,7 +479,7 @@ div>div {
      width: 100%;
      box-sizing: border-box;
 
-`,l2=async l=>{console.log(typeof l);const i=new FormData;i.append("file",l);const c=await Dt.post("/uploads/upload",i,{headers:{"Content-Type":"multipart/form-data"}});return alert("Imagen correctamente subida"),c.data},r2=async()=>(await Dt.get("/uploads/list")).data,i2=async l=>(await Dt.delete("/uploads/delete",l)).data,u2=Q.div`
+`,l2=async l=>{console.log(typeof l);const i=new FormData;i.append("file",l);const c=await Dt.post("/uploads/upload",i,{headers:{"Content-Type":"multipart/form-data"}});return alert("Imagen correctamente subida"),c.data},r2=async()=>(await Dt.get("/uploads/list")).data,i2=async l=>{const i={data:l};return(await Dt.delete("/uploads/delete",i)).data},u2=Q.div`
     text-align: center;
     border: 3px solid   #de98de; 
     background-color : #FAD9FA ;
