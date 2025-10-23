@@ -20,6 +20,10 @@ export const getAllImages = async () => {
 };
 
 export const deleteImg = async (img)=>{
-    const res = await api.delete('/uploads/delete', img);
-    return res.data
+    const config ={
+        data:img
+    };
+    
+    const res = await api.delete("/uploads/delete", config);
+    return res.data;
 }
