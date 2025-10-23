@@ -55,6 +55,7 @@ const CheckoutPage = () => {
     if (pending) {
       try {
         const data = JSON.parse(pending);
+        console.log(data)
         const fakeItem = {
           id: Date.now(),
           productId: data.productId,
@@ -153,7 +154,7 @@ const CheckoutPage = () => {
           <CartSummary>
             {displayCart.map((item) => (
               <CartItem key={item.id}>
-                <ItemImage src={`http://localhost:8082${item.image}`} alt={item.title} />
+                <ItemImage src={apiurl + item.image} alt={item.title} />
                 <ItemInfo>
                   <h4>{item.title}</h4>
                   <p>
