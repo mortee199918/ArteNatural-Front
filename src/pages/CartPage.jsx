@@ -1,4 +1,3 @@
-// src/pages/CartPage.jsx
 import { useCart } from "./CartContext";
 import { useNavigate } from "react-router-dom";
 import useToken from "../hooks/useToken";

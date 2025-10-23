@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Title, Container, Texto, ElBoton, Input } from "../Styled/PerfilStyled";
 import Artistas from "./Artistas";
 import { getUserFromToken, updatePerfil } from "../services/user";

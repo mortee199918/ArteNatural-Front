@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { uploadImageToBack } from "../services/upload";
+import { uploadImageToBack, deleteImg } from "../services/upload";
 import { Conatiner, ElBoton, Titulo , Input } from "../Styled/ArtistasStyles";
 import { Select, Option } from "../Styled/RegisterStyled";
 import { uploadProduct } from "../services/product";
@@ -14,9 +14,9 @@ const Artistas = ({user}) => {
     const [categories, setCategories] = useState([]);
     const categorySelect = useRef();
     const [option, setOption] = useState();
+    const [ deleteImage, setDeleteImage] = useState(user?.artistData? user.artistData.images[0] : null);
 
 
-    console.log(product);
     
 
     return (
@@ -28,7 +28,17 @@ const Artistas = ({user}) => {
                 <ElBoton onClick={()=>{
                     uploadImageToBack(uploadImage);
                 }}>Subir Imagen </ElBoton>
-                <ElBoton>Eliminar</ElBoton><br/>
+                    <Select onChange={e => setDeleteImage(e.target.value)}> 
+                        {
+                            user?.artistData?.images.map(image => {
+                                const imageName = image.slice(image.lastIndexOf("/")+1)
+                                return <Option key={imageName} value={image} >{imageName}</Option>
+                            })
+                        }
+                    </Select>
+                <ElBoton onClick={()=>{
+                    deleteImg(deleteImage);
+                }}>Eliminar</ElBoton><br/>
                
                 <br/><hr /> <br/>
                 <form>

@@ -1,8 +1,7 @@
-// src/pages/OpenGallery.jsx
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Title, ContainerDiv, GalleryCard, GalleryImage } from "../Styled/GalleryStyles";
-import { getAllPublicProducts } from "../services/product"; // ✅ nuevo servicio
+import { getAllPublicProducts } from "../services/product"; 
 import { apiurl } from "../services/api";
 
 const OpenGallery = () => {

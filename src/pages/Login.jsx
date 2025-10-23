@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Title, Container, ContainerInput,  Texto, Boton, Input } from "../Styled/LoginStyled";
+import { Title, Container, Texto, Boton, Input } from "../Styled/LoginStyled";
 import { useNavigate } from "react-router-dom";
 import { login } from "../services/auth";
 import useToken from "../hooks/useToken"

@@ -18,3 +18,8 @@ export const getAllImages = async () => {
     const res = await api.get("/uploads/list/all");
     return res.data;
 };
+
+export const deleteImg = async (img)=>{
+    const res = await api.delete('/uploads/delete', img);
+    return res.data
+}
