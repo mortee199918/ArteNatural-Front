@@ -1,6 +1,11 @@
 
 import { Link } from 'react-router-dom';
 import { Title, Main, ArtWorks, ArtCard, ArtImg, CardBody, ArtTitle, ArtName, Descripcion, CardFooter, Prince, CardBoton  } from '../Styled/HomeStyled';
+import { useEffect, useState } from 'react';
+import { getAllPublicProducts } from '../services/product';
+import { apiurl } from '../services/api';
+
+
 
 
 
@@ -25,6 +30,12 @@ const mockArtworks = [
 ];
 
 const Home = () => {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    getAllPublicProducts()
+      .then(setProducts)
+      .catch((err) => console.error("Error al cargar productos:", err));
+  }, []);
   
 
 
@@ -35,18 +46,17 @@ const Home = () => {
       <Main>
         <Title>Obras destacadas</Title>
         <ArtWorks>
-          {mockArtworks.map((artwork) => (
-            <ArtCard key={artwork.id} >
-              <ArtImg src={artwork.imageUrl.trim()}alt={artwork.title}/>
+          {products.slice(0, 3).map((product) => (
+            <ArtCard key={product.id} >
+              <ArtImg src={apiurl +product.image}alt={product.title}/>
               <CardBody>
-                <ArtTitle>{artwork.title}</ArtTitle>
-                <ArtName>por {artwork.artistName}</ArtName>
-                <Descripcion>{artwork.description}</Descripcion>
+                <ArtTitle>{product.title}</ArtTitle>
+                <Descripcion>{product.description}</Descripcion>
                 <CardFooter>
-                  <Prince>${artwork.price}</Prince>
+                  <Prince>${product.price}</Prince>
                   <CardBoton>
                     
-                    <Link to={`/artwork/${artwork.id}`} className="btn-buy">
+                    <Link to={`/artwork/${product.id}`} className="btn-buy">
                       Ver detalles
                     </Link>
                   </CardBoton>
