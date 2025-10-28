@@ -37,6 +37,8 @@ const Artistas = ({user}) => {
                         }
                     </Select>
                 <ElBoton onClick={()=>{
+                    console.log(deleteImage);
+                    
                     deleteImg(deleteImage);
                 }}>Eliminar</ElBoton><br/>
                

@@ -21,6 +21,7 @@ export const CartProvider = ({ children }) => {
 
   // Guardar en localStorage cada vez que cambie el carrito
   useEffect(() => {
+    if (cart.length !== 0)
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
@@ -39,10 +40,14 @@ export const CartProvider = ({ children }) => {
 
   const removeFromCart = (itemId) => {
     setCart((prev) => prev.filter(item => item.id !== itemId));
+    if (cart.length === 1) {
+      localStorage.removeItem("cart");
+    }
   };
 
   const clearCart = () => {
     setCart([]);
+    localStorage.removeItem("cart");
   };
 
   const getTotal = () => {
