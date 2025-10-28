@@ -103,6 +103,8 @@ const CheckoutPage = () => {
     setError("");
     setIsSubmitting(true);
 
+
+    console.log(1111111111, formData.paymentMethod)
     try {
       const response = await fetch(apiurl + "/purchases", {
         method: "POST",
