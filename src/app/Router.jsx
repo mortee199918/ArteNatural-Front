@@ -7,7 +7,7 @@ import Perfil from '../pages/Perfil';
 import Gallery from '../pages/Gallery';
 import useToken from '../hooks/useToken';
 import { validateToken, unsetToken, setAuth } from '../services/auth';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import OpenGallery from '../pages/OpenGallery';
 import ProductDetail from '../pages/ProductDetail';
 import CheckoutPage from '../pages/CheckoutPage';
@@ -20,24 +20,25 @@ import HelpPagos from '../pages/helps/HelpPagos';
 import X from '../pages/helps/Privacidad';
 import Y from '../pages/helps/Disclaimer';
 import Contactos from '../pages/helps/Contactos';
+import { useAuth } from '../hooks/useAuth';
 
 
 
 const Router = () => {
-  const [isAuthenticated, setAuthenticated] = useState()
   const { token, deleteToken } = useToken();
+  const {authenticated, setAuthenticated} = useAuth();
 
   useEffect(() => {
     if (token) {
 
-
+alert(111)
       setAuth();
       validateToken().then((valid) => {
         if (!valid) {
           unsetToken()
           deleteToken()
         }
-        setAuthenticated(valid)
+        setAuthenticated(true)
       });
     }
   }
@@ -51,7 +52,7 @@ const Router = () => {
       <Route path="/Register" element={<Register />} />
       <Route path="" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="/Perfil" element={isAuthenticated ? <Perfil /> : <Login />} />
+        <Route path="/Perfil" element={authenticated ? <Perfil /> : <Login />} />
         <Route path="/open-gallery" element={<OpenGallery />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/cart" element={<CartPage />} />

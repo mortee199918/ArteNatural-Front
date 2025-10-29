@@ -7,10 +7,12 @@ import { getUserFromToken } from '../services/user';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../pages/CartContext';
 import { setAuth } from '../services/auth';
+import { useAuth } from '../hooks/useAuth';
 
 
 const Layout = () => {
 
+    const { authenticated } = useAuth();
     const { deleteToken, token } = useToken();
     const [user, setUser] = useState();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +24,7 @@ const Layout = () => {
     useEffect(() => {
         if (token){
         getUserFromToken().then(setUser)}
-    }, [setAuth()])
+    }, [authenticated])
     return (
 
         <>
