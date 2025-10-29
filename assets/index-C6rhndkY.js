@@ -649,15 +649,15 @@ div>div {
   max-width: 1200px;
   margin: 0 auto;
 `,D2=Q.h1`
-    background-color: var(--primary-bg);
-    color: var(--text-color);
-    border-radius: 30px;
-    width: fit-content;
+    background-color: #6DAFB3;
+    color: #FAD9FA;
+    border-radius: 30px 30px 30px 30px;
+    width: 25rem;
     text-align: center;
-    margin: 80px auto 2rem auto;
-    font-size: 2.5em;
+    margin: auto;
+    margin-top: 80px;
+    font-size: 4em;
     text-shadow: 2px 2px 4px #000000;
-    padding: 0.5rem 1.5rem;
 
 `,Rp=Q.div`
   background: #fff;
@@ -711,10 +711,11 @@ div>div {
   font-weight: bold;
   color: #333;
 `,Or=Q.input`
-  padding: 0.6rem;
+  padding: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
+  margin-left: 20px;
   &:focus {
     outline: none;
     border-color: #4c7274;
