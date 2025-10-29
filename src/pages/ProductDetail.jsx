@@ -27,6 +27,7 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   const [selectedOptions, setSelectedOptions] = useState({});
   const [totalPrice, setTotalPrice] = useState(0);
+  const [customMessage, setCustomMessage] = useState("");
   const { addToCart } = useCart();
 
   useEffect(() => {
@@ -74,6 +75,7 @@ const ProductDetail = () => {
       productId: product.id,
       selectedOptions,
       totalPrice,
+      customMessage,
     };
     localStorage.setItem("pendingPurchase", JSON.stringify(purchaseData));
     navigate("/checkout");
@@ -99,7 +101,7 @@ const ProductDetail = () => {
 
       <Content>
         <ProductImage
-          src={apiurl +product.image}
+          src={apiurl + product.image}
           alt={product.title}
         />
 
@@ -128,6 +130,25 @@ const ProductDetail = () => {
               </OptionSelect>
             </OptionGroup>
           ))}
+
+          <div style={{ marginTop: "1.2rem" }}>
+            <label style={{ display: "block", fontWeight: "bold", marginBottom: "0.4rem" }}>
+              ¿Quieres personalizar este diseño?
+            </label>
+            <textarea
+              value={customMessage}
+              onChange={(e) => setCustomMessage(e.target.value)}
+              placeholder="Ej: Quiero que sea un león en vez de un caballo"
+              style={{
+                width: "100%",
+                padding: "0.6rem",
+                borderRadius: "4px",
+                border: "1px solid #ccc",
+                minHeight: "80px",
+                fontSize: "0.95rem",
+              }}
+            />
+          </div>
 
           <TotalPrice>Total: {totalPrice.toFixed(2)}€</TotalPrice>
           <BuyButton onClick={handleBuy}>Comprar</BuyButton>

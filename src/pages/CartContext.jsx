@@ -22,10 +22,10 @@ export const CartProvider = ({ children }) => {
   // Guardar en localStorage cada vez que cambie el carrito
   useEffect(() => {
     if (cart.length !== 0)
-    localStorage.setItem("cart", JSON.stringify(cart));
+      localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  const addToCart = (product, selectedOptions, totalPrice) => {
+  const addToCart = (product, selectedOptions, totalPrice, customMessage = "") => {
     const item = {
       id: Date.now() + Math.random(), // ID único para el item en el carrito
       productId: product.id,
@@ -34,6 +34,7 @@ export const CartProvider = ({ children }) => {
       basePrice: product.price,
       selectedOptions, // { "Tamaño": 10, "Color": 5 }
       totalPrice,
+      customMessage,
     };
     setCart((prev) => [...prev, item]);
   };

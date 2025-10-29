@@ -113,7 +113,13 @@ const CheckoutPage = () => {
           Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
-          items: displayCart,
+          items: displayCart.map(item => ({
+            productId: item.productId,
+            basePrice: item.basePrice,
+            totalPrice: item.totalPrice,
+            selectedOptions: item.selectedOptions,
+            customMessage: item.customMessage || "", // ✅ Enviar al backend
+          })),
           total: displayTotal,
           customer: {
             name: formData.name,
