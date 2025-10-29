@@ -8,6 +8,7 @@ export const Registers = styled.h2`
     text-align: center;
     margin: auto;
     margin-top: 80px;
+    font-family: 'Caveat', cursive;
     font-size: 4em;
     text-shadow: 2px 2px 4px #000000;
     padding: 20px;
@@ -32,11 +33,19 @@ export const Container = styled.div`
     gap: 18px;
 `
 export const Input = styled.input `
-     border-radius: 30px 30px 30px 30px;
+     border-radius: 30px;
+     border: 3px solid   #4081f1; 
+     background-color:  #d9effa;
      text-align: center;
      padding: 10px;
      width: 100%;
      box-sizing: border-box;
+     :focus{
+        outline: none;
+        border-color: #13056b;
+        background-color: white;
+      
+     }
 
 `
 export const Label = styled.label `
@@ -51,7 +60,7 @@ export const Label = styled.label `
 export const Boton = styled.button `
   border: 3px solid   #de98de; 
   background-color:  #FAD9FA;
-  color: black;
+  color: #7e0163;
   border-radius: 30px;
   padding: 12px 20px;
   font-size: 1.1em;
@@ -60,7 +69,8 @@ export const Boton = styled.button `
   margin-top: 10px;
   transition: background-color 0.3s;
   &:hover{
-     background-color: #333;
+     background-color: #7e0163;
+     color: white;
   }
 
 `

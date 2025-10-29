@@ -3,7 +3,9 @@ import {css, Global} from "@emotion/react";
 
 export const GlobalStyles = () => (
   <Global
+  
     styles={css`
+    
       *,
       *::before,
       *::after {
@@ -13,6 +15,7 @@ export const GlobalStyles = () => (
       }
 
       :root {
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Press+Start+2P&display=swap');
         --primary-bg: #6DAFB3;
         --text-color: #FAD9FA;
         --button-bg: black;
@@ -32,6 +35,7 @@ export const Main = styled.main `
 
 `
 export const Title = styled.h1 `
+ 
   background-color: var(--primary-bg);
   color: var(--text-color);
   border-radius: 30px;
@@ -41,6 +45,8 @@ export const Title = styled.h1 `
   font-size: 2.5em;
   text-shadow: 2px 2px 4px #000000;
   padding: 0.5rem 1.5rem;
+  box-shadow: 4px 4px 12px #003c0c;
+  font-family: 'Caveat';
 `
 export const ArtWorks = styled.div`
   display: grid;
@@ -54,18 +60,21 @@ export const ArtCard = styled.div `
   background-color: var(--primary-bg);
   border-radius: 30px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s;
+  border: 3px solid #003c0c88;
+  box-shadow: 4px 4px 12px #003c0c;
+  transition-duration: 0.3s;
+  filter: brightness(0.75);
+  &:hover {
+    filter: brightness(1);
+  }
 `
 export const ArtImg = styled.img`
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-bottom: 3px solid rgba(0, 0, 0, 0.1);
-  :hover {
-  transform: translateY(-6px);
-}
 `
+
 export const CardBody = styled.div`
   padding: 1.2rem;
 `
@@ -74,6 +83,7 @@ export const ArtTitle = styled.h3`
   margin-bottom: 0.4rem;
   color: var(--text-color);
   text-shadow: 1px 1px 2px #000;
+  font-family: 'Caveat', cursive;
 `
 export const ArtName = styled.p `
   color: var(--text-color);
@@ -101,8 +111,21 @@ export const Prince = styled.span`
   font-size: 1.2em;
 `
 export const CardBoton = styled.div `
-  display: flex;
-  gap: 0.6rem;
+a {
+  text-decoration: none;
+  color: white;
+}
+background-color: #024402;
+border: 3px solid #012a01;
+padding: 0.5rem 1rem;
+border-radius: 30px;
+font-weight: bold;
+cursor: pointer;
+transition: opacity 0.3s;
+&:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
+}
 
 `
 export const ElBoton = styled.button`

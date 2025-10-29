@@ -68,6 +68,8 @@ export const Linked = styled.ul`
   gap: 1.2rem;
 
   a {
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
     text-decoration: none;
     //color: var(--text-color);
     font-weight: bold;
@@ -138,10 +140,12 @@ export const Hamburguesa = styled.div`
 `;
 
 export const DisabledCart = styled.span`
+  pointer-events: none;
+  font-family: 'Caveat', cursive;
   color: #888;
   cursor: not-allowed;
   opacity: 0.6;
-  pointer-events: none;
+  
 `;
 export const Footer = styled.footer`
 background-color: #ff8ff02d;

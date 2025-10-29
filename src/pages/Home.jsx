@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import { Title, Main, ArtWorks, ArtCard, ArtImg, CardBody, ArtTitle, ArtName, Descripcion, CardFooter, Prince, CardBoton  } from '../Styled/HomeStyled';
+import { GlobalStyles, Title, Main, ArtWorks, ArtCard, ArtImg, CardBody, ArtTitle, ArtName, Descripcion, CardFooter, Prince, CardBoton  } from '../Styled/HomeStyled';
 import { useEffect, useState } from 'react';
 import { getAllPublicProducts } from '../services/product';
 import { apiurl } from '../services/api';
@@ -56,7 +56,7 @@ const Home = () => {
                   <Prince>${product.price}</Prince>
                   <CardBoton>
                     
-                    <Link to={`/artwork/${product.id}`} className="btn-buy">
+                    <Link to={`/product/${product.id}`} className="btn-buy">
                       Ver detalles
                     </Link>
                   </CardBoton>

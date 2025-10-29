@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Title, Container, Texto, Boton, Input } from "../Styled/LoginStyled";
+import { Registers, Input, Container, Label, Boton } from "../Styled/RegisterStyled";
 import { useNavigate } from "react-router-dom";
 import { login } from "../services/auth";
 import useToken from "../hooks/useToken"
@@ -16,10 +16,10 @@ const Login = () => {
     },[token]);
     return (
        <>
-         <Title>Login</Title>
+         <Registers>Login</Registers>
          <Container>
-            <Texto> Nombre de Usuario: <br/><Input type="text" value={username} className='ConatinerInput' placeholder="username" onChange={(e) => setUsername(e.target.value)} /></Texto>
-            <Texto> Contraseña: <br/> <Input type="password" value={password} className='ContainerInput' placeholder="password" onChange={(e) => setPassword(e.target.value)} /></Texto>
+            <Label> Nombre de Usuario: <br/><Input type="text" value={username} className='ConatinerInput' placeholder="username" onChange={(e) => setUsername(e.target.value)} /></Label>
+            <Label> Contraseña: <br/> <Input type="password" value={password} className='ContainerInput' placeholder="password" onChange={(e) => setPassword(e.target.value)} /></Label>
             <Boton onClick={() => {
                console.log(username, password);
 
