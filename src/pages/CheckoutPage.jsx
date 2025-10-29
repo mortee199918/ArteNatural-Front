@@ -214,7 +214,7 @@ const CheckoutPage = () => {
               />
             </FormGroup>
 
-            <div style={{ display: "flex", gap: "1rem" }}>
+            {/* <div style={{ display: "flex", gap: "1rem" }}> */}
               <FormGroup style={{ flex: 1 }}>
                 <Label>Ciudad</Label>
                 <Input
@@ -233,7 +233,7 @@ const CheckoutPage = () => {
                   placeholder="12345"
                 />
               </FormGroup>
-            </div>
+            {/* </div> */}
 
             <SectionTitle style={{ marginTop: "1.5rem" }}>Método de pago</SectionTitle>
             <PaymentMethod>
