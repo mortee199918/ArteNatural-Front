@@ -8,9 +8,16 @@ export const CheckoutContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #333;
+    background-color: #6DAFB3;
+    color: #FAD9FA;
+    border-radius: 30px 30px 30px 30px;
+    width: 50rem;
+    text-align: center;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    font-size: 4em;
+    text-shadow: 2px 2px 4px #000000;
 `;
 
 export const Section = styled.div`
@@ -18,6 +25,7 @@ export const Section = styled.div`
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
 `;
 
 export const SectionTitle = styled.h2`
@@ -89,6 +97,7 @@ export const Input = styled.input`
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
+  max-width: 20rem;
   &:focus {
     outline: none;
     border-color: #4c7274;

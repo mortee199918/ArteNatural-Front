@@ -155,7 +155,7 @@ const ProductDetail = () => {
           <BuyButton
             style={{ backgroundColor: "#28a745" }}
             onClick={() => {
-              addToCart(product, selectedOptions, totalPrice);
+              addToCart(product, selectedOptions, totalPrice, customMessage);
               alert("Producto añadido al carrito");
             }}
           >

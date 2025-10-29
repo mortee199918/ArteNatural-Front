@@ -44,7 +44,7 @@ const Layout = () => {
                         <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Inicio</Link></li>
                         {user?.roles[0].roleName === "ARTIST" &&
                             <li><Link to="/Gallery" onClick={() => setIsMenuOpen(false)}>Mi Galería</Link></li>}
-                        <li><Link to="/Perfil" onClick={() => setIsMenuOpen(false)}>Perfil</Link></li>
+                        <li><Link to={authenticated ? "/Perfil" : "/Login"} onClick={() => setIsMenuOpen(false)}>Perfil</Link></li>
                         <li><Link to='/open-gallery' onClick={() => setIsMenuOpen(false)}> Galería General</Link></li>
                         {/* {getItemCount() > 0 && ( */
                             <li>

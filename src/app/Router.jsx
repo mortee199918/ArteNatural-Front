@@ -52,7 +52,7 @@ alert(111)
       <Route path="/Register" element={<Register />} />
       <Route path="" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="/Perfil" element={authenticated ? <Perfil /> : <Login />} />
+        <Route path="/Perfil" element={<Perfil />} />
         <Route path="/open-gallery" element={<OpenGallery />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/cart" element={<CartPage />} />
