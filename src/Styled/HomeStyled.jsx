@@ -41,7 +41,7 @@ export const Title = styled.h1 `
   border-radius: 30px;
   width: fit-content;
   text-align: center;
-  margin: 80px auto 2rem auto;
+  margin: 30px auto 2rem auto;
   font-size: 2.5em;
   text-shadow: 2px 2px 4px #000000;
   padding: 0.5rem 1.5rem;
@@ -53,7 +53,7 @@ export const ArtWorks = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 60px auto;
 
 `
 export const ArtCard = styled.div `
