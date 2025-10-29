@@ -649,9 +649,16 @@ div>div {
   max-width: 1200px;
   margin: 0 auto;
 `,D2=Q.h1`
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #333;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    border-radius: 30px;
+    width: fit-content;
+    text-align: center;
+    margin: 80px auto 2rem auto;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px #000000;
+    padding: 0.5rem 1.5rem;
+
 `,Rp=Q.div`
   background: #fff;
   padding: 1.5rem;
