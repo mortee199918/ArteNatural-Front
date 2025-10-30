@@ -15,7 +15,7 @@ const Perfil = () => {
 
     return (
         <>
-                <Title>Perfil</Title>
+                <Title>PERFiL</Title>
                    
             <Container>
                 <Texto><label>Username:</label><Input type="text" defaultValue={user?.username} onChange={(e)=>setUser({...user, username: e.target.value})}/></Texto>
