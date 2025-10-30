@@ -36,17 +36,18 @@ export const Main = styled.main `
 `
 export const Title = styled.h1 `
  
-  background-color: var(--primary-bg);
-  color: var(--text-color);
+  /* background-color: var(--primary-bg); */
+  color: var(--primary-bg);
   border-radius: 30px;
   width: fit-content;
   text-align: center;
   margin: 30px auto 2rem auto;
-  font-size: 2.5em;
-  text-shadow: 2px 2px 4px #000000;
+  font-size: 4.5em;
+  /* text-shadow: 2px 2px 4px #000000; */
   padding: 0.5rem 1.5rem;
-  box-shadow: 4px 4px 12px #003c0c;
-  font-family: 'Caveat';
+  /* box-shadow: 4px 4px 12px #003c0c; */
+  font-family: 'Forte';
+  font-weight: 200;
 `
 export const ArtWorks = styled.div`
   display: grid;

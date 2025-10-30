@@ -70,6 +70,7 @@ export const Lineup = styled.p`
 `
 export const Warning = styled.p`
     color: red; 
+    
 
 `
 export const Center = styled.p`

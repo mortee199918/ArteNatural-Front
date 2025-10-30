@@ -68,7 +68,7 @@ export const Linked = styled.ul`
   gap: 1.2rem;
 
   a {
-    font-family: 'Caveat', cursive;
+    font-family: '', cursive;
     font-size: 1.2rem;
     text-decoration: none;
     //color: var(--text-color);
@@ -141,16 +141,16 @@ export const Hamburguesa = styled.div`
 
 export const DisabledCart = styled.span`
   pointer-events: none;
-  font-family: 'Caveat', cursive;
+  font-family: 'Force', cursive;
   color: #888;
   cursor: not-allowed;
   opacity: 0.6;
   
 `;
 export const Footer = styled.footer`
-background-color: #ff8ff02d;
-color: #33036f;
-box-shadow: -3px 0 3px #9f088a76;
+background-color:#4c7274;
+color: white;
+/* box-shadow: -3px 0 3px #9f088a76; */
 ${desktop}{
 display: flex;
 justify-content: space-between;
@@ -164,7 +164,7 @@ div>div {
   padding: 15px;
   text-align: left;
   ${mobile} {
-    background-color: #0f8ef018;
+    background-color: var(--primary);
 		width:100%;
     max-width: 100%;
     text-align: center;
@@ -176,13 +176,13 @@ div>div {
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
-    color: #33036f;
+    color: white;
     :hover{
       color: white;
     }
   }
   h2{
-    color: #330dc9
+    color: white;
   }
 }
 

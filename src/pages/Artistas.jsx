@@ -21,7 +21,7 @@ const Artistas = ({user}) => {
 
     return (
         <div>
-            <Titulo>Artistas</Titulo>
+            <Titulo>ARTiSTAS</Titulo>
             <Conatiner>
                 <Input type="file" onChange={(e)=>setUploadImage(e.target.files[0])}/>
 

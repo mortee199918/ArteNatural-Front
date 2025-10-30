@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Title, ContainerDiv, GalleryCard, GalleryImage } from "../Styled/GalleryStyles";
+import { Title, ContainerDiv, GalleryCard, GalleryImage, GalleryOverlay } from "../Styled/GalleryStyles";
 import { getAllPublicProducts } from "../services/product"; 
 import { apiurl } from "../services/api";
 
@@ -21,6 +21,9 @@ const OpenGallery = () => {
           products.map((product) => (
             <Link key={product.id} to={`/product/${product.id}`} style={{ textDecoration: 'none' }}>
               <GalleryCard>
+                <GalleryOverlay>
+                  <button>Comprar</button>
+                </GalleryOverlay>
                 <GalleryImage
                   src={apiurl +product.image}
                   alt={product.title}
