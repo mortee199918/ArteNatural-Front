@@ -17,6 +17,7 @@ export const Title = styled.h1`
     font-size: 2.5em;
     /* text-shadow: 2px 2px 4px #000000; */
     padding: 0.5rem 1.5rem;
+    font-family: "Forte";
 
 `;
 

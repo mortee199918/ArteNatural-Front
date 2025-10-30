@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 
 export const Titulo = styled.h1`
-    background-color: #6DAFB3;
-    color: #FAD9FA;
+    /* background-color: #6DAFB3; */
+    color: darkgreen;
     border-radius: 30px 30px 30px 30px;
     max-width: 65rem;
     text-align: center;
@@ -10,6 +10,7 @@ export const Titulo = styled.h1`
     margin-top: 50px;
     font-size: 4em;
     text-shadow: 2px 2px 4px #000000;
+    font-family: 'Forte';
 
 `
 export const MinTitulo = styled.h2 `

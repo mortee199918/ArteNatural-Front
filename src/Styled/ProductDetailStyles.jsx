@@ -41,27 +41,28 @@ export const ProductInfo = styled.div`
 `;
 
 export const Title = styled.h1`
-  background-color: var(--primary-bg);
-  color: var(--text-color);
+  /* background-color: var(--primary-bg); */
+  color: darkgreen;
   border-radius: 30px;
   width: fit-content;
   text-align: center;
-  margin: 80px auto 2rem auto;
+  margin: 60px auto 2rem auto;
   font-size: 2.5em;
-  text-shadow: 2px 2px 4px #000000;
+  /* text-shadow: 2px 2px 4px #000000; */
   padding: 0.5rem 1.5rem;
+  font-family: 'Forte';
 `;
 
 export const Description = styled.p`
-  color: #555;
+  color: green;
   margin-bottom: 1.5rem;
   font-size: 1.3rem;
-  font-style: italic;
+  font-style: "Fonte";
 `;
 
 export const BasePrice = styled.p`
   margin-bottom: 1.5rem;
-  color: #EB65EB;
+  color: darkgreen;
 `;
 
 export const OptionGroup = styled.div`
@@ -72,6 +73,7 @@ export const OptionLabel = styled.label`
   display: block;
   font-weight: bold;
   margin-bottom: 0.4rem;
+  
 `;
 
 export const OptionSelect = styled.select`

@@ -18,6 +18,7 @@ export const Title = styled.h1`
     margin-bottom: 60px;
     font-size: 4em;
     /* text-shadow: 2px 2px 4px #000000; */
+    font-family: 'Forte';
 `;
    
 

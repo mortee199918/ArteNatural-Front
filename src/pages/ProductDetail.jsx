@@ -132,7 +132,7 @@ const ProductDetail = () => {
           ))}
 
           <div style={{ marginTop: "1.2rem" }}>
-            <label style={{ display: "block", fontWeight: "bold", marginBottom: "0.4rem" }}>
+            <label style={{ display: "block", fontWeight: "bold", marginBottom: "0.4rem" , color:"darkgreen" }}>
               ¿Quieres personalizar este diseño?
             </label>
             <textarea

@@ -37,7 +37,7 @@ export const Main = styled.main `
 export const Title = styled.h1 `
  
   /* background-color: var(--primary-bg); */
-  color: var(--primary-bg);
+  color: darkgreen;
   border-radius: 30px;
   width: fit-content;
   text-align: center;

@@ -46,7 +46,7 @@ export const ElBoton = styled.button`
 `
 export const Input = styled.input `
     color: darkgreen;
-    border: 3px solid   #de98de; 
+    border: 3px solid   darkgreen; 
     background-color : #ffffff ;
     text-align: center;
     border-radius: 30px 30px 30px 30px;
@@ -58,7 +58,7 @@ export const Input = styled.input `
         cursor: pointer;
     }
     :focus {
-        background-color: #ffd7ff;
+        background-color:  #eef8f3;
     }
 
 `
