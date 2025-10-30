@@ -46,7 +46,8 @@ const Home = () => {
       <Main>
         <Title>Obras destacadas</Title>
         <ArtWorks>
-          {products.slice(0, 3).map((product) => (
+          {products.slice(0, 3).map((product) => (  
+          <Link to={`/product/${product.id}`}>
             <ArtCard key={product.id} >
               <ArtImg src={apiurl +product.image}alt={product.title}/>
               <CardBody>
@@ -54,15 +55,10 @@ const Home = () => {
                 <Descripcion>{product.description}</Descripcion>
                 <CardFooter>
                   <Prince>${product.price}</Prince>
-                  <CardBoton>
-                    
-                    <Link to={`/product/${product.id}`} className="btn-buy">
-                      Ver detalles
-                    </Link>
-                  </CardBoton>
                 </CardFooter>
               </CardBody>
             </ArtCard>
+          </Link>
           ))}
         </ArtWorks>
       </Main>
