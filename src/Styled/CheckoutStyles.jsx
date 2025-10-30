@@ -8,17 +8,18 @@ export const CheckoutContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-    background-color: #6DAFB3;
-    color: #FAD9FA;
-    border-radius: 30px 30px 30px 30px;
+    /* background-color: #6DAFB3; */
+    color: darkgreen;
+    /* border-radius: 30px 30px 30px 30px; */
     width: 50rem;
     text-align: center;
     margin: auto;
     margin-top: 40px;
     margin-bottom: 60px;
     font-size: 4em;
-    text-shadow: 2px 2px 4px #000000;
+    /* text-shadow: 2px 2px 4px #000000; */
 `;
+   
 
 export const Section = styled.div`
   background: #fff;

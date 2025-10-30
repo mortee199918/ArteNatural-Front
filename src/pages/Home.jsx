@@ -44,7 +44,7 @@ const Home = () => {
     
       
       <Main>
-        <Title>Obras destacadas</Title>
+        <Title>OBRAS DESTACADAS</Title>
         <ArtWorks>
           {products.slice(0, 3).map((product) => (
             <ArtCard key={product.id} >
