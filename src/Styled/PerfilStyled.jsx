@@ -15,8 +15,8 @@ export const Title = styled.h1`
 
 `
 export const Container = styled.div`
-    border: 3px solid #4c7274; 
-    background-color : #c7f5cc ;
+    border: 3px solid darkgreen; 
+    background-color : #bceadb ;
     text-align: center;
     border-radius: 30px 30px 30px 30px;
     max-width:500px;
@@ -27,16 +27,18 @@ export const Container = styled.div`
 `
 export const Texto = styled.p`
   font-weight: bold;
-  color: #E63EE6;
-  text-shadow: 1px 1px 2px #000;
+  label{
+  color: darkgreen;
+  }
+  /* text-shadow: 1px 1px 2px #000; */
   min-width: 130px; 
   text-align: center;
   font-size: 1.1em;
 `
 export const ElBoton = styled.button`
-    color: #E63EE6;
-    border: 3px solid   #de98de; 
-    background-color : #ffffff ;
+    color: darkgreen;
+    border: 3px solid   darkgreen; 
+    background-color : #fff ;
     text-align: center;
     border-radius: 30px 30px 30px 30px;
     width: 70px;
@@ -44,17 +46,22 @@ export const ElBoton = styled.button`
     margin: auto;
     padding: 2px;
     :hover {
-        background-color: #9e479e;
+        background-color: #bbe4e7;
         cursor: pointer;
-        color: white;
     }
     
 `
 export const Input = styled.input `
-     border-radius: 30px 30px 30px 30px;
+     border-radius: 30px;
+     border: 3px solid darkgreen;
+     
      text-align: center;
      padding: 10px;
      width: 100%;
      box-sizing: border-box;
+    :focus{
+         background-color: #e4ffe5;
+         outline: none;
+     }
 
 `

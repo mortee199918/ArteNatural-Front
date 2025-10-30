@@ -28,6 +28,7 @@ const Artistas = ({user}) => {
                 <ElBoton onClick={()=>{
                     uploadImageToBack(uploadImage);
                 }}>Subir Imagen </ElBoton>
+                <br />
                     <Select onChange={e => setDeleteImage(e.target.value)}> 
                         {
                             user?.artistData?.images.map(image => {
@@ -36,13 +37,15 @@ const Artistas = ({user}) => {
                             })
                         }
                     </Select>
+                    <br />
                 <ElBoton onClick={()=>{
                     console.log(deleteImage);
                     
                     deleteImg(deleteImage);
                 }}>Eliminar</ElBoton><br/>
                
-                <br/><hr /> <br/>
+            </Conatiner>
+            <Conatiner>
                 <form>
                     
                     

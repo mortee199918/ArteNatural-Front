@@ -29,7 +29,7 @@ const Perfil = () => {
                     if (password === verifiedPassword && password != null) {
                         let uploadUser = {...user, password: password};
                        updatePerfil(uploadUser); 
-                       alert("Usuario Actualizado")
++                       alert("Usuario Actualizado")
                     }
                 }}> Editar </ElBoton>
             </Container>    
