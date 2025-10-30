@@ -155,6 +155,8 @@ const CheckoutPage = () => {
     <CheckoutContainer>
       <Title>FiNALiZAR COMPRA</Title>
 
+
+
       <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}>
         {/* Resumen del pedido */}
         <Section style={{ flex: 2, minWidth: "300px" }}>

@@ -72,17 +72,21 @@ const Layout = () => {
                 </Navbar>
                 <Outlet></Outlet>
                 <Footer>
-                    <div><div>
-                        <h2>Contacto</h2>
-                        <ul>
-                            <li>Whatsapp</li>
-                            <li>+34 722643267</li>
-                            <li> Carrer Berlin, 67 </li>
-                            <li>artenatural@fundacioesplai.com</li>
+                        <div>
+                            <img src="assets/logoReducido.png" />
+                        </div>
+                 
+                        <div>
+                            <h2>Contacto</h2>
+                            <ul id="DatosContacto">
+                                <li>Whatsapp</li>
+                                <li>+34 722643267</li>
+                                <li> Carrer Berlin, 67 </li>
+                                <li>artenatural@fundacioesplai.com</li>
 
-                        </ul>
-                    </div></div>
-                    <div><div>
+                            </ul>
+                        </div>
+                   <div>
                         <h2>Ayuda</h2>
                         <ul>
                             <li><Link to={"/HelpPerfil"}>Perfil</Link></li>
@@ -99,11 +103,11 @@ const Layout = () => {
                                 <li><Link to={"/X"}>Privacidad</Link></li>
                                 <li><Link to={"/Y"}>Descargo de Resposabilidad</Link></li>
                             </ul>
-                        </div></div>
+                        </div>
                     
                 </Footer>
                     <div>
-                        <small>&copy; 2025 ArteNatural. Todos los derechos reservados.</small>
+                        <small style={{color:"darkgreen", textAlign:'center'}}>&copy; 2025 ArteNatural. Todos los derechos reservados.</small>
                     </div>
             </div>
         </>

@@ -1,16 +1,17 @@
 import styled from "@emotion/styled";
 
 export const Title = styled.h1`
-    background-color: #4c7274;
-    color: var(--text-color);
+    /* background-color: #4c7274; */
+    color: darkgreen;
     border-radius: 30px;
     width: fit-content;
     text-align: center;
     margin: 80px auto 2rem auto;
     font-size: 2.5em;
     font-family: 'Forte';
-    text-shadow: 2px 2px 4px #000000;
+    /* text-shadow: 2px 2px 4px #000000; */
     padding: 0.5rem 1.5rem;
+    font-family: 'Forte';
 
 
 `

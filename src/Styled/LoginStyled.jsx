@@ -1,21 +1,22 @@
 import styled from "@emotion/styled";
 
 export const Title = styled.h1`
-    background-color: #6DAFB3;
-    color: #FAD9FA;
+    /* background-color: #6DAFB3; */
+    color: darkgreen;
     border-radius: 30px 30px 30px 30px;
     width: 25rem;
     text-align: center;
     margin: auto;
     margin-top: 80px;
     font-size: 4em;
-    text-shadow: 2px 2px 4px #000000;
+    /* text-shadow: 2px 2px 4px #000000; */
+    font-family: "Forte";
 
 `
 export const Texto = styled.p`
     text-align: center;
     font-weight: bold;
-    color: #FAD9FA;
+    color: darkgreen;
     text-shadow: 1px 1px 2px #000;
     min-width: 130px; 
     font-size: 1.2em;

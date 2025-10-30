@@ -153,9 +153,9 @@ color: white;
 /* box-shadow: -3px 0 3px #9f088a76; */
 ${desktop}{
 display: flex;
-justify-content: space-between;
+justify-content: space-around;
 }
-div>div {
+div {
   display: block;
   align-self: top;
   width: 300px;
@@ -163,8 +163,11 @@ div>div {
   float: left;
   padding: 15px;
   text-align: left;
+  #DatosContacto {
+    font-family:  cursive;
+  }
   ${mobile} {
-    background-color: var(--primary);
+    background-color:#4c7274 ;
 		width:100%;
     max-width: 100%;
     text-align: center;

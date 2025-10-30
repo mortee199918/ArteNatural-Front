@@ -121,6 +121,7 @@ export const PaymentMethod = styled.div`
 `;
 
 export const PaymentOption = styled.div`
+  color: black;
   padding: 0.8rem;
   border: 2px solid ${(props) => (props.active ? "#4c7274" : "#ddd")};
   border-radius: 8px;
