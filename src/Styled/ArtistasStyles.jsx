@@ -11,7 +11,13 @@ export const Conatiner = styled.div `
     width: fit-content;
     margin: auto;
     margin-bottom: 30px;
-    
+    padding: 10px;
+    select {
+        width: 350px;
+        height: 30px;
+        border-radius: 15px;
+        border: 2px solid darkgreen;
+    }
 `
 
 export const Titulo = styled.h1`
@@ -37,12 +43,10 @@ export const ElBoton = styled.button`
     font-size: 1.1em;
     margin: auto;
     padding: 2px;
-     :hover {
+    :hover {
         background-color: #bbe4e7;
         cursor: pointer;
     }
-   
-    
 `
 export const Input = styled.input `
     color: darkgreen;
@@ -52,7 +56,7 @@ export const Input = styled.input `
     border-radius: 30px 30px 30px 30px;
     width: 350px;
     font-size: 1.1em;
-    margin: auto;
+    margin: 5px;
     :hover {
         background-color: #e3e3e3;
         cursor: pointer;
@@ -60,5 +64,6 @@ export const Input = styled.input `
     :focus {
         background-color:  #eef8f3;
     }
+
 
 `
