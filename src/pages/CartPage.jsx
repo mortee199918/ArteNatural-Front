@@ -41,7 +41,7 @@ const CartPage = () => {
 
   return (
     <Container>
-      <Title>Tu carrito ({getItemCount()} productos)</Title>
+      <Title>TU CARRiTO ({getItemCount()} productos)</Title>
 
       {cart.map((item) => (
         <CartItem key={item.id}>

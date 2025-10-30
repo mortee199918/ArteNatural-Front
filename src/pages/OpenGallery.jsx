@@ -15,7 +15,7 @@ const OpenGallery = () => {
 
   return (
     <>
-      <Title>Galería de Artistas</Title>
+      <Title>GALERíA DE ARTiSTAS</Title>
       <ContainerDiv>
         {products.length > 0 ? (
           products.map((product) => (

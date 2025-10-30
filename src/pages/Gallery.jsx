@@ -16,7 +16,7 @@ const Gallery = () => {
 
     return (
         <>
-            <Title>Mi Galería</Title>
+            <Title>Mi GALERíA</Title>
             <ContainerDiv>
                 {images.length > 0 ? (
                     images.map((imgUrl, index) => (

@@ -14,7 +14,7 @@ const Register = () => {
 
   return (
     <Form>
-      <Registers>Registrarse</Registers>
+      <Registers>REGiSTRARSE</Registers>
       <Container>
         <div>
           <Label>
