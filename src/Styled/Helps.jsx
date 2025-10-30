@@ -9,7 +9,7 @@ export const Titulo = styled.h1`
     margin: auto;
     margin-top: 50px;
     font-size: 4em;
-    text-shadow: 2px 2px 4px #000000;
+    /* text-shadow: 2px 2px 4px #000000; */
     font-family: 'Forte';
 
 `
