@@ -16,7 +16,7 @@ const Login = () => {
     },[token]);
     return (
        <>
-         <Registers>Login</Registers>
+         <Registers>LOGiN</Registers>
          <Container>
             <Label> Nombre de Usuario: <br/><Input type="text" value={username} className='ConatinerInput' placeholder="username" onChange={(e) => setUsername(e.target.value)} /></Label>
             <Label> Contraseña: <br/> <Input type="password" value={password} className='ContainerInput' placeholder="password" onChange={(e) => setPassword(e.target.value)} /></Label>

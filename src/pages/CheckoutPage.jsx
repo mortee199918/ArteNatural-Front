@@ -153,7 +153,7 @@ const CheckoutPage = () => {
 
   return (
     <CheckoutContainer>
-      <Title>Finalizar Compra</Title>
+      <Title>FiNALiZAR COMPRA</Title>
 
       <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}>
         {/* Resumen del pedido */}
