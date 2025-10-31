@@ -30,8 +30,6 @@ const Router = () => {
 
   useEffect(() => {
     if (token) {
-
-alert(111)
       setAuth();
       validateToken().then((valid) => {
         if (!valid) {
